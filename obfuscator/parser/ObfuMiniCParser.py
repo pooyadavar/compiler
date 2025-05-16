@@ -34,8 +34,8 @@ def serializedATN():
         1,24,1,24,1,24,1,24,1,24,3,24,259,8,24,1,24,1,24,1,24,1,24,1,24,
         3,24,266,8,24,1,25,1,25,1,25,5,25,271,8,25,10,25,12,25,274,9,25,
         1,25,0,0,26,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,
-        38,40,42,44,46,48,50,0,6,1,0,6,8,1,0,21,22,1,0,23,26,1,0,27,28,1,
-        0,29,31,2,0,27,28,32,32,289,0,56,1,0,0,0,2,61,1,0,0,0,4,70,1,0,0,
+        38,40,42,44,46,48,50,0,6,1,0,6,8,1,0,19,20,1,0,21,24,1,0,25,26,1,
+        0,27,29,2,0,25,26,30,30,289,0,56,1,0,0,0,2,61,1,0,0,0,4,70,1,0,0,
         0,6,78,1,0,0,0,8,81,1,0,0,0,10,85,1,0,0,0,12,93,1,0,0,0,14,98,1,
         0,0,0,16,100,1,0,0,0,18,116,1,0,0,0,20,119,1,0,0,0,22,123,1,0,0,
         0,24,153,1,0,0,0,26,155,1,0,0,0,28,188,1,0,0,0,30,190,1,0,0,0,32,
@@ -44,14 +44,14 @@ def serializedATN():
         0,0,50,267,1,0,0,0,52,55,3,2,1,0,53,55,3,8,4,0,54,52,1,0,0,0,54,
         53,1,0,0,0,55,58,1,0,0,0,56,54,1,0,0,0,56,57,1,0,0,0,57,59,1,0,0,
         0,58,56,1,0,0,0,59,60,5,0,0,1,60,1,1,0,0,0,61,62,3,14,7,0,62,63,
-        5,37,0,0,63,65,5,1,0,0,64,66,3,4,2,0,65,64,1,0,0,0,65,66,1,0,0,0,
+        5,35,0,0,63,65,5,1,0,0,64,66,3,4,2,0,65,64,1,0,0,0,65,66,1,0,0,0,
         66,67,1,0,0,0,67,68,5,2,0,0,68,69,3,16,8,0,69,3,1,0,0,0,70,75,3,
         6,3,0,71,72,5,3,0,0,72,74,3,6,3,0,73,71,1,0,0,0,74,77,1,0,0,0,75,
         73,1,0,0,0,75,76,1,0,0,0,76,5,1,0,0,0,77,75,1,0,0,0,78,79,3,14,7,
-        0,79,80,5,37,0,0,80,7,1,0,0,0,81,82,3,14,7,0,82,83,3,10,5,0,83,84,
+        0,79,80,5,35,0,0,80,7,1,0,0,0,81,82,3,14,7,0,82,83,3,10,5,0,83,84,
         5,4,0,0,84,9,1,0,0,0,85,90,3,12,6,0,86,87,5,3,0,0,87,89,3,12,6,0,
         88,86,1,0,0,0,89,92,1,0,0,0,90,88,1,0,0,0,90,91,1,0,0,0,91,11,1,
-        0,0,0,92,90,1,0,0,0,93,96,5,37,0,0,94,95,5,5,0,0,95,97,3,30,15,0,
+        0,0,0,92,90,1,0,0,0,93,96,5,35,0,0,94,95,5,5,0,0,95,97,3,30,15,0,
         96,94,1,0,0,0,96,97,1,0,0,0,97,13,1,0,0,0,98,99,7,0,0,0,99,15,1,
         0,0,0,100,105,5,9,0,0,101,104,3,8,4,0,102,104,3,18,9,0,103,101,1,
         0,0,0,103,102,1,0,0,0,104,107,1,0,0,0,105,103,1,0,0,0,105,106,1,
@@ -72,19 +72,19 @@ def serializedATN():
         5,2,0,0,152,154,3,18,9,0,153,132,1,0,0,0,153,138,1,0,0,0,154,25,
         1,0,0,0,155,157,5,15,0,0,156,158,3,30,15,0,157,156,1,0,0,0,157,158,
         1,0,0,0,158,159,1,0,0,0,159,160,5,4,0,0,160,27,1,0,0,0,161,162,5,
-        16,0,0,162,163,5,1,0,0,163,168,5,35,0,0,164,165,5,3,0,0,165,167,
+        39,0,0,162,163,5,1,0,0,163,168,5,33,0,0,164,165,5,3,0,0,165,167,
         3,30,15,0,166,164,1,0,0,0,167,170,1,0,0,0,168,166,1,0,0,0,168,169,
         1,0,0,0,169,171,1,0,0,0,170,168,1,0,0,0,171,172,5,2,0,0,172,189,
-        5,4,0,0,173,174,5,17,0,0,174,175,5,1,0,0,175,183,5,35,0,0,176,178,
-        5,3,0,0,177,179,5,18,0,0,178,177,1,0,0,0,178,179,1,0,0,0,179,180,
-        1,0,0,0,180,182,5,37,0,0,181,176,1,0,0,0,182,185,1,0,0,0,183,181,
+        5,4,0,0,173,174,5,40,0,0,174,175,5,1,0,0,175,183,5,33,0,0,176,178,
+        5,3,0,0,177,179,5,16,0,0,178,177,1,0,0,0,178,179,1,0,0,0,179,180,
+        1,0,0,0,180,182,5,35,0,0,181,176,1,0,0,0,182,185,1,0,0,0,183,181,
         1,0,0,0,183,184,1,0,0,0,184,186,1,0,0,0,185,183,1,0,0,0,186,187,
         5,2,0,0,187,189,5,4,0,0,188,161,1,0,0,0,188,173,1,0,0,0,189,29,1,
         0,0,0,190,191,3,32,16,0,191,31,1,0,0,0,192,195,3,34,17,0,193,194,
         5,5,0,0,194,196,3,32,16,0,195,193,1,0,0,0,195,196,1,0,0,0,196,33,
-        1,0,0,0,197,202,3,36,18,0,198,199,5,19,0,0,199,201,3,36,18,0,200,
+        1,0,0,0,197,202,3,36,18,0,198,199,5,17,0,0,199,201,3,36,18,0,200,
         198,1,0,0,0,201,204,1,0,0,0,202,200,1,0,0,0,202,203,1,0,0,0,203,
-        35,1,0,0,0,204,202,1,0,0,0,205,210,3,38,19,0,206,207,5,20,0,0,207,
+        35,1,0,0,0,204,202,1,0,0,0,205,210,3,38,19,0,206,207,5,18,0,0,207,
         209,3,38,19,0,208,206,1,0,0,0,209,212,1,0,0,0,210,208,1,0,0,0,210,
         211,1,0,0,0,211,37,1,0,0,0,212,210,1,0,0,0,213,218,3,40,20,0,214,
         215,7,1,0,0,215,217,3,40,20,0,216,214,1,0,0,0,217,220,1,0,0,0,218,
@@ -97,8 +97,8 @@ def serializedATN():
         241,3,46,23,0,240,238,1,0,0,0,241,244,1,0,0,0,242,240,1,0,0,0,242,
         243,1,0,0,0,243,45,1,0,0,0,244,242,1,0,0,0,245,246,7,5,0,0,246,249,
         3,46,23,0,247,249,3,48,24,0,248,245,1,0,0,0,248,247,1,0,0,0,249,
-        47,1,0,0,0,250,266,5,37,0,0,251,266,5,36,0,0,252,266,5,34,0,0,253,
-        266,5,33,0,0,254,266,5,35,0,0,255,256,5,37,0,0,256,258,5,1,0,0,257,
+        47,1,0,0,0,250,266,5,35,0,0,251,266,5,34,0,0,252,266,5,32,0,0,253,
+        266,5,31,0,0,254,266,5,33,0,0,255,256,5,35,0,0,256,258,5,1,0,0,257,
         259,3,50,25,0,258,257,1,0,0,0,258,259,1,0,0,0,259,260,1,0,0,0,260,
         266,5,2,0,0,261,262,5,1,0,0,262,263,3,30,15,0,263,264,5,2,0,0,264,
         266,1,0,0,0,265,250,1,0,0,0,265,251,1,0,0,0,265,252,1,0,0,0,265,
@@ -122,9 +122,11 @@ class ObfuMiniCParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'('", "')'", "','", "';'", "'='", "'int'", 
                      "'char'", "'bool'", "'{'", "'}'", "'if'", "'else'", 
-                     "'while'", "'for'", "'return'", "'printf'", "'scanf'", 
-                     "'&'", "'||'", "'&&'", "'=='", "'!='", "'<'", "'<='", 
-                     "'>'", "'>='", "'+'", "'-'", "'*'", "'/'", "'%'", "'!'" ]
+                     "'while'", "'for'", "'return'", "'&'", "'||'", "'&&'", 
+                     "'=='", "'!='", "'<'", "'<='", "'>'", "'>='", "'+'", 
+                     "'-'", "'*'", "'/'", "'%'", "'!'", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "'printf'", "'scanf'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -133,9 +135,9 @@ class ObfuMiniCParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "BOOL", "CHAR", "STRING", "NUMBER", "ID", 
-                      "WS", "LINE_COMMENT", "BLOCK_COMMENT" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "BOOL", "CHAR", 
+                      "STRING", "NUMBER", "ID", "WS", "LINE_COMMENT", "BLOCK_COMMENT", 
+                      "PRINTF", "SCANF" ]
 
     RULE_compilationUnit = 0
     RULE_funcDef = 1
@@ -202,16 +204,16 @@ class ObfuMiniCParser ( Parser ):
     T__27=28
     T__28=29
     T__29=30
-    T__30=31
-    T__31=32
-    BOOL=33
-    CHAR=34
-    STRING=35
-    NUMBER=36
-    ID=37
-    WS=38
-    LINE_COMMENT=39
-    BLOCK_COMMENT=40
+    BOOL=31
+    CHAR=32
+    STRING=33
+    NUMBER=34
+    ID=35
+    WS=36
+    LINE_COMMENT=37
+    BLOCK_COMMENT=38
+    PRINTF=39
+    SCANF=40
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -785,7 +787,7 @@ class ObfuMiniCParser ( Parser ):
             self.state = 105
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 270985849810) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 1717013900242) != 0):
                 self.state = 103
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
@@ -793,7 +795,7 @@ class ObfuMiniCParser ( Parser ):
                     self.state = 101
                     self.varDecl()
                     pass
-                elif token in [1, 4, 9, 11, 13, 14, 15, 16, 17, 27, 28, 32, 33, 34, 35, 36, 37]:
+                elif token in [1, 4, 9, 11, 13, 14, 15, 25, 26, 30, 31, 32, 33, 34, 35, 39, 40]:
                     self.state = 102
                     self.stmt()
                     pass
@@ -874,7 +876,7 @@ class ObfuMiniCParser ( Parser ):
             self.state = 116
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [1, 4, 27, 28, 32, 33, 34, 35, 36, 37]:
+            if token in [1, 4, 25, 26, 30, 31, 32, 33, 34, 35]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 110
                 self.exprStmt()
@@ -899,7 +901,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 114
                 self.returnStmt()
                 pass
-            elif token in [16, 17]:
+            elif token in [39, 40]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 115
                 self.ioStmt()
@@ -957,7 +959,7 @@ class ObfuMiniCParser ( Parser ):
             self.state = 119
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 270985592834) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 67746398210) != 0):
                 self.state = 118
                 self.expr()
 
@@ -1115,7 +1117,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 141
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 270985592834) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 67746398210) != 0):
                     self.state = 140
                     self.expr()
 
@@ -1125,7 +1127,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 145
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 270985592834) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 67746398210) != 0):
                     self.state = 144
                     self.expr()
 
@@ -1135,7 +1137,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 149
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 270985592834) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 67746398210) != 0):
                     self.state = 148
                     self.expr()
 
@@ -1200,7 +1202,7 @@ class ObfuMiniCParser ( Parser ):
             self.state = 157
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 270985592834) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 67746398210) != 0):
                 self.state = 156
                 self.expr()
 
@@ -1223,6 +1225,9 @@ class ObfuMiniCParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def PRINTF(self):
+            return self.getToken(ObfuMiniCParser.PRINTF, 0)
+
         def STRING(self):
             return self.getToken(ObfuMiniCParser.STRING, 0)
 
@@ -1232,6 +1237,9 @@ class ObfuMiniCParser ( Parser ):
             else:
                 return self.getTypedRuleContext(ObfuMiniCParser.ExprContext,i)
 
+
+        def SCANF(self):
+            return self.getToken(ObfuMiniCParser.SCANF, 0)
 
         def ID(self, i:int=None):
             if i is None:
@@ -1268,10 +1276,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 188
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [16]:
+            if token in [39]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 161
-                self.match(ObfuMiniCParser.T__15)
+                self.match(ObfuMiniCParser.PRINTF)
                 self.state = 162
                 self.match(ObfuMiniCParser.T__0)
                 self.state = 163
@@ -1293,10 +1301,10 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 172
                 self.match(ObfuMiniCParser.T__3)
                 pass
-            elif token in [17]:
+            elif token in [40]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 173
-                self.match(ObfuMiniCParser.T__16)
+                self.match(ObfuMiniCParser.SCANF)
                 self.state = 174
                 self.match(ObfuMiniCParser.T__0)
                 self.state = 175
@@ -1310,9 +1318,9 @@ class ObfuMiniCParser ( Parser ):
                     self.state = 178
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if _la==18:
+                    if _la==16:
                         self.state = 177
-                        self.match(ObfuMiniCParser.T__17)
+                        self.match(ObfuMiniCParser.T__15)
 
 
                     self.state = 180
@@ -1495,9 +1503,9 @@ class ObfuMiniCParser ( Parser ):
             self.state = 202
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==19:
+            while _la==17:
                 self.state = 198
-                self.match(ObfuMiniCParser.T__18)
+                self.match(ObfuMiniCParser.T__16)
                 self.state = 199
                 self.logicAndExpr()
                 self.state = 204
@@ -1559,9 +1567,9 @@ class ObfuMiniCParser ( Parser ):
             self.state = 210
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==20:
+            while _la==18:
                 self.state = 206
-                self.match(ObfuMiniCParser.T__19)
+                self.match(ObfuMiniCParser.T__17)
                 self.state = 207
                 self.equalityExpr()
                 self.state = 212
@@ -1623,10 +1631,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 218
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==21 or _la==22:
+            while _la==19 or _la==20:
                 self.state = 214
                 _la = self._input.LA(1)
-                if not(_la==21 or _la==22):
+                if not(_la==19 or _la==20):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1692,10 +1700,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 226
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 125829120) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 31457280) != 0):
                 self.state = 222
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 125829120) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 31457280) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1761,10 +1769,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 234
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==27 or _la==28:
+            while _la==25 or _la==26:
                 self.state = 230
                 _la = self._input.LA(1)
-                if not(_la==27 or _la==28):
+                if not(_la==25 or _la==26):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1830,10 +1838,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 242
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 3758096384) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 939524096) != 0):
                 self.state = 238
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 3758096384) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 939524096) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1897,11 +1905,11 @@ class ObfuMiniCParser ( Parser ):
             self.state = 248
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [27, 28, 32]:
+            if token in [25, 26, 30]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 245
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 4697620480) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1174405120) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1909,7 +1917,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 246
                 self.unaryExpr()
                 pass
-            elif token in [1, 33, 34, 35, 36, 37]:
+            elif token in [1, 31, 32, 33, 34, 35]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 247
                 self.primaryExpr()
@@ -2024,7 +2032,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 258
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 270985592834) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 67746398210) != 0):
                     self.state = 257
                     self.argList()
 

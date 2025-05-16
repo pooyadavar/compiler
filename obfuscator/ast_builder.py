@@ -72,11 +72,11 @@ class ASTBuilder(ObfuMiniCVisitor):
             )
 
     def visitIoStmt(self, ctx):
-        if ctx.getChild(0).getText() == 'printf':
+        if ctx.PRINTF():
             fmt = ctx.STRING().getText().strip('"')
             args = [self.visit(e) for e in ctx.expr()]
             return Print(fmt, args)
-        else:
+        elif ctx.SCANF():
             fmt = ctx.STRING().getText().strip('"')
             args = [id_tok.getText().replace('&', '') for id_tok in ctx.ID()]
             return Scan(fmt, args)

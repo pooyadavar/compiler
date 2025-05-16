@@ -33,8 +33,9 @@ loopStmt
 
 returnStmt  : 'return' expr? ';' ;
 
-ioStmt      : 'printf' '(' STRING (',' expr)* ')' ';'
-            | 'scanf' '(' STRING (',' '&'? ID)* ')' ';' ;
+ioStmt
+    : PRINTF '(' STRING (',' expr)* ')' ';'
+    | SCANF  '(' STRING (',' '&'? ID)* ')' ';' ;
 
 expr
     : assignExpr ;
