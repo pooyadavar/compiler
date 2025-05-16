@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ANTLR_JAR=../antlr-4.12.0-complete.jar
+ANTLR_JAR=../antlr-4.13.2-complete.jar
 GRAMMAR=ObfuMiniC
 OUTPUT_DIR=../obfuscator/parser
 

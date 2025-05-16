@@ -1,5 +1,5 @@
 @echo off
-set ANTLR_JAR=..\antlr-4.12.0-complete.jar
+set ANTLR_JAR=..\antlr-4.13.2-complete.jar
 set GRAMMAR=ObfuMiniC
 set OUTPUT_DIR=..\obfuscator\parser
 
