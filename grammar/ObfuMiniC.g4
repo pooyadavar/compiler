@@ -66,12 +66,12 @@ unaryExpr
     | primaryExpr ;
 
 primaryExpr
-    : ID
-    | NUMBER
+    : ID LPAREN argList? RPAREN     
+    | ID| NUMBER
     | CHAR
     | BOOL
     | STRING
-    | ID '(' argList? ')'     // function call
+    | ID '(' argList? ')'    
     | '(' expr ')' ;
 
 argList     : expr (',' expr)* ;
@@ -91,3 +91,6 @@ BLOCK_COMMENT: '/*' .*? '*/' -> skip ;
 
 PRINTF : 'printf' ;
 SCANF  : 'scanf' ;
+
+LPAREN : '(' ;
+RPAREN : ')' ;

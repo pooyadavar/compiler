@@ -1,18 +1,19 @@
 from obfuscator.parser.ObfuMiniCVisitor import ObfuMiniCVisitor
-from obfuscator.parser.ObfuMiniCVisitor import ObfuMiniCVisitor
+from obfuscator.parser.ObfuMiniCParser import *
 from obfuscator.ast import (
     Program, Function, Parameter, VariableDecl, ExpressionStmt, Return,
-    IfStmt, WhileStmt, ForStmt, Print, Scan, Assignment, BinaryOp,
+    IfStmt, WhileStmt, ForStmt, Block, Print, Scan, Assignment, BinaryOp,
     UnaryOp, FuncCall, Variable, Literal
 )
 
+
 class ASTBuilder(ObfuMiniCVisitor):
 
-    def visitCompilationUnit(self, ctx) :
+    def visitCompilationUnit(self, ctx):
         functions = []
         for child in ctx.children:
             result = self.visit(child)
-            if result:
+            if isinstance(result, Function):
                 functions.append(result)
         return Program(functions)
 
@@ -20,8 +21,8 @@ class ASTBuilder(ObfuMiniCVisitor):
         return_type = ctx.type_().getText()
         name = ctx.ID().getText()
         params = self.visit(ctx.paramList()) if ctx.paramList() else []
-        body = self.visit(ctx.blockStmt())
-        return Function(return_type, name, params, body)
+        block = self.visit(ctx.blockStmt())
+        return Function(return_type, name, params, block.items if isinstance(block, Block) else [])
 
     def visitParamList(self, ctx):
         return [self.visit(p) for p in ctx.param()]
@@ -31,13 +32,15 @@ class ASTBuilder(ObfuMiniCVisitor):
 
     def visitBlockStmt(self, ctx):
         stmts = []
-        for child in ctx.children[1:-1]:  # strip { and }
-            stmt = self.visit(child)
-            if isinstance(stmt, list):
-                stmts.extend(stmt)
-            elif stmt:
-                stmts.append(stmt)
-        return stmts
+        for child in ctx.children[1:-1]:  
+            result = self.visit(child)
+            if result is None:
+                continue
+            if isinstance(result, list):
+                stmts.extend(result)
+            else:
+                stmts.append(result)
+        return Block(stmts)
 
     def visitVarDecl(self, ctx):
         var_type = ctx.type_().getText()
@@ -49,27 +52,30 @@ class ASTBuilder(ObfuMiniCVisitor):
         return decls
 
     def visitExprStmt(self, ctx):
-        return ExpressionStmt(self.visit(ctx.expr())) if ctx.expr() else ExpressionStmt(None)
+        expr = self.visit(ctx.expr()) if ctx.expr() else None
+        return ExpressionStmt(expr)
 
     def visitReturnStmt(self, ctx):
-        return Return(self.visit(ctx.expr()) if ctx.expr() else None)
+        expr = self.visit(ctx.expr()) if ctx.expr() else None
+        return Return(expr)
 
     def visitIfStmt(self, ctx):
         cond = self.visit(ctx.expr())
-        then_stmt = self.visit(ctx.stmt(0))
-        else_stmt = self.visit(ctx.stmt(1)) if ctx.ELSE() else None
-        return IfStmt(cond, then_stmt, else_stmt)
+        then_branch = self.visit(ctx.stmt(0))
+        else_branch = self.visit(ctx.stmt(1)) if ctx.ELSE() else None
+        return IfStmt(cond, then_branch, else_branch)
 
     def visitLoopStmt(self, ctx):
         if ctx.WHILE():
-            return WhileStmt(self.visit(ctx.expr(0)), self.visit(ctx.stmt()))
+            cond = self.visit(ctx.expr(0))
+            body = self.visit(ctx.stmt())
+            return WhileStmt(cond, body)
         else:
-            return ForStmt(
-                self.visit(ctx.expr(0)) if ctx.expr(0) else None,
-                self.visit(ctx.expr(1)) if ctx.expr(1) else None,
-                self.visit(ctx.expr(2)) if ctx.expr(2) else None,
-                self.visit(ctx.stmt())
-            )
+            init = self.visit(ctx.expr(0)) if ctx.expr(0) else None
+            cond = self.visit(ctx.expr(1)) if ctx.expr(1) else None
+            update = self.visit(ctx.expr(2)) if ctx.expr(2) else None
+            body = self.visit(ctx.stmt())
+            return ForStmt(init, cond, update, body)
 
     def visitIoStmt(self, ctx):
         if ctx.PRINTF():
@@ -78,16 +84,21 @@ class ASTBuilder(ObfuMiniCVisitor):
             return Print(fmt, args)
         elif ctx.SCANF():
             fmt = ctx.STRING().getText().strip('"')
-            args = [id_tok.getText().replace('&', '') for id_tok in ctx.ID()]
+            args = [tok.getText().replace('&', '') for tok in ctx.ID()]
             return Scan(fmt, args)
+
+
+    # === Expressions ===
 
     def visitAssignExpr(self, ctx):
         if ctx.getChildCount() == 3:
-            return Assignment(ctx.getChild(0).getText(), self.visit(ctx.assignExpr()))
+            target = ctx.getChild(0).getText()
+            value = self.visit(ctx.assignExpr())
+            return Assignment(target, value)
         return self.visit(ctx.logicOrExpr())
 
     def visitLogicOrExpr(self, ctx):
-        if len(ctx.children) == 1:
+        if len(ctx.logicAndExpr()) == 1:
             return self.visit(ctx.logicAndExpr(0))
         left = self.visit(ctx.logicAndExpr(0))
         for i in range(1, len(ctx.logicAndExpr())):
@@ -96,7 +107,7 @@ class ASTBuilder(ObfuMiniCVisitor):
         return left
 
     def visitLogicAndExpr(self, ctx):
-        if len(ctx.children) == 1:
+        if len(ctx.equalityExpr()) == 1:
             return self.visit(ctx.equalityExpr(0))
         left = self.visit(ctx.equalityExpr(0))
         for i in range(1, len(ctx.equalityExpr())):
@@ -107,7 +118,7 @@ class ASTBuilder(ObfuMiniCVisitor):
     def visitEqualityExpr(self, ctx):
         left = self.visit(ctx.relationalExpr(0))
         for i in range(1, len(ctx.relationalExpr())):
-            op = ctx.getChild(2*i - 1).getText()
+            op = ctx.getChild(2 * i - 1).getText()
             right = self.visit(ctx.relationalExpr(i))
             left = BinaryOp(op, left, right)
         return left
@@ -115,7 +126,7 @@ class ASTBuilder(ObfuMiniCVisitor):
     def visitRelationalExpr(self, ctx):
         left = self.visit(ctx.addExpr(0))
         for i in range(1, len(ctx.addExpr())):
-            op = ctx.getChild(2*i - 1).getText()
+            op = ctx.getChild(2 * i - 1).getText()
             right = self.visit(ctx.addExpr(i))
             left = BinaryOp(op, left, right)
         return left
@@ -123,7 +134,7 @@ class ASTBuilder(ObfuMiniCVisitor):
     def visitAddExpr(self, ctx):
         left = self.visit(ctx.mulExpr(0))
         for i in range(1, len(ctx.mulExpr())):
-            op = ctx.getChild(2*i - 1).getText()
+            op = ctx.getChild(2 * i - 1).getText()
             right = self.visit(ctx.mulExpr(i))
             left = BinaryOp(op, left, right)
         return left
@@ -131,17 +142,24 @@ class ASTBuilder(ObfuMiniCVisitor):
     def visitMulExpr(self, ctx):
         left = self.visit(ctx.unaryExpr(0))
         for i in range(1, len(ctx.unaryExpr())):
-            op = ctx.getChild(2*i - 1).getText()
+            op = ctx.getChild(2 * i - 1).getText()
             right = self.visit(ctx.unaryExpr(i))
             left = BinaryOp(op, left, right)
         return left
 
     def visitUnaryExpr(self, ctx):
         if ctx.getChildCount() == 2:
-            return UnaryOp(ctx.getChild(0).getText(), self.visit(ctx.unaryExpr()))
+            op = ctx.getChild(0).getText()
+            operand = self.visit(ctx.unaryExpr())
+            return UnaryOp(op, operand)
         return self.visit(ctx.primaryExpr())
 
     def visitPrimaryExpr(self, ctx):
+        if ctx.ID() and ctx.LPAREN():
+            name = ctx.ID().getText()
+            args = self.visit(ctx.argList()) if ctx.argList() else []
+            return FuncCall(name, args)
+        
         if ctx.ID() and ctx.expr():
             return FuncCall(ctx.ID().getText(), self.visit(ctx.argList()) if ctx.argList() else [])
         elif ctx.ID():

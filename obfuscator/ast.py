@@ -1,7 +1,32 @@
 from typing import List, Optional
 
+""" Base AST Node """
+
 class ASTNode:
-    pass
+    def __repr__(self):
+        return self._repr()
+
+    def _repr(self, indent=0):
+        pad = '  ' * indent
+        fields = vars(self)
+        result = f"{pad}{self.__class__.__name__}:\n"
+        for k, v in fields.items():
+            result += f"{pad}  {k}: "
+            if isinstance(v, ASTNode):
+                result += "\n" + v._repr(indent + 2)
+            elif isinstance(v, list):
+                result += "[\n"
+                for item in v:
+                    if isinstance(item, ASTNode):
+                        result += item._repr(indent + 3) + "\n"
+                    else:
+                        result += "  " * (indent + 3) + repr(item) + "\n"
+                result += pad + "  ]\n"
+            else:
+                result += repr(v) + "\n"
+        return result
+
+""" Program Structure """
 
 class Program(ASTNode):
     def __init__(self, functions: List['Function']):
@@ -19,61 +44,68 @@ class Parameter(ASTNode):
         self.param_type = param_type
         self.name = name
 
-class VariableDecl(ASTNode):
-    def __init__(self, var_type: str, name: str, init_expr: Optional['Expression']):
+""" Abstract Bases """
+
+class Statement(ASTNode):
+    pass
+
+class Expression(ASTNode):
+    pass
+
+""" Statements """
+
+class VariableDecl(Statement):
+    def __init__(self, var_type: str, name: str, init_expr: Optional[Expression]):
         self.var_type = var_type
         self.name = name
         self.init_expr = init_expr
 
-class Return(ASTNode):
-    def __init__(self, value: Optional['Expression']):
-        self.value = value
-
-class ExpressionStmt(ASTNode):
-    def __init__(self, expr: Optional['Expression']):
+class ExpressionStmt(Statement):
+    def __init__(self, expr: Optional[Expression]):
         self.expr = expr
 
-class IfStmt(ASTNode):
-    def __init__(self, condition: 'Expression', then_branch: 'Statement', else_branch: Optional['Statement']):
+class Return(Statement):
+    def __init__(self, value: Optional[Expression]):
+        self.value = value
+
+class IfStmt(Statement):
+    def __init__(self, condition: Expression, then_branch: Statement, else_branch: Optional[Statement]):
         self.condition = condition
         self.then_branch = then_branch
         self.else_branch = else_branch
 
-class WhileStmt(ASTNode):
-    def __init__(self, condition: 'Expression', body: 'Statement'):
+class WhileStmt(Statement):
+    def __init__(self, condition: Expression, body: Statement):
         self.condition = condition
         self.body = body
 
-class ForStmt(ASTNode):
-    def __init__(self, init: Optional['Expression'], cond: Optional['Expression'], update: Optional['Expression'], body: 'Statement'):
+class ForStmt(Statement):
+    def __init__(self, init: Optional[Expression], cond: Optional[Expression], update: Optional[Expression], body: Statement):
         self.init = init
         self.cond = cond
         self.update = update
         self.body = body
 
-class Block(ASTNode):
-    def __init__(self, items: List['Statement']):
+class Block(Statement):
+    def __init__(self, items: List[Statement]):
         self.items = items
 
-class Print(ASTNode):
-    def __init__(self, format_str: str, args: List['Expression']):
+class Print(Statement):
+    def __init__(self, format_str: str, args: List[Expression]):
         self.format_str = format_str
         self.args = args
 
-class Scan(ASTNode):
+class Scan(Statement):
     def __init__(self, format_str: str, args: List[str]):
         self.format_str = format_str
         self.args = args
 
-class Assignment(ASTNode):
-    def __init__(self, target: str, value: 'Expression'):
+class Assignment(Statement):
+    def __init__(self, target: str, value: Expression):
         self.target = target
         self.value = value
 
-# --- Expressions ---
-
-class Expression(ASTNode):
-    pass
+""" Expressions """
 
 class BinaryOp(Expression):
     def __init__(self, op: str, left: Expression, right: Expression):
@@ -98,6 +130,3 @@ class FuncCall(Expression):
     def __init__(self, name: str, args: List[Expression]):
         self.name = name
         self.args = args
-
-class Statement(ASTNode):
-    pass
