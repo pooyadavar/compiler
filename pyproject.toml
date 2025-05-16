@@ -1,0 +1,7 @@
+[project]
+name = "compiler"
+version = "0.1.0"
+description = "first phase of compiler project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
