@@ -4,7 +4,15 @@ if (false)
 printf("Unreachable
 ");
 }
-int nut23 = (ucm40 + ofx52);
+
+                    here we have in bug --> [[[[
+                        int nut23 = (ucm40 + ofx52);
+                    ]]]]
+                    it have to be --> [[[[
+                        int nut23 = (ucm40 -( - ofx52 ) );
+                    ]]]]
+
+
 return nut23;
 }
 int rkk2() {
