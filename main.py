@@ -2,16 +2,21 @@ from antlr4 import FileStream, CommonTokenStream
 from obfuscator.parser.ObfuMiniCLexer import ObfuMiniCLexer
 from obfuscator.parser.ObfuMiniCParser import ObfuMiniCParser
 from obfuscator.ast_builder import ASTBuilder
+from obfuscator.obfuscator import NameObfuscator 
 
 def main():
-    input_stream = FileStream("input/input.mc")
+    input_stream = FileStream("input/input.mc") 
     lexer = ObfuMiniCLexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = ObfuMiniCParser(stream)
 
     tree = parser.compilationUnit()
     ast = ASTBuilder().visit(tree)
-    print(ast)   
+
+    #change name of variables
+    obfuscator = NameObfuscator()
+    obfuscator.obfuscate(ast)
+    print(ast)
 
 if __name__ == '__main__':
     main()
