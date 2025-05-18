@@ -5,6 +5,7 @@ from obfuscator.ast_builder import ASTBuilder
 from obfuscator.obfuscator import NameObfuscator 
 from obfuscator.deadcode import DeadCodeInserter
 from obfuscator.expression_transform import ExpressionTransformer
+from obfuscator.code_generator import CodeGenerator
 
 
 def main():
@@ -27,7 +28,15 @@ def main():
     transformer = ExpressionTransformer()
     transformer.transform(ast)
 
-    print(ast)
+    # تولید کد Mini-C از AST
+    generator = CodeGenerator()
+    code = generator.generate(ast)
+
+    with open("mc.output", "w") as f:
+        f.write(code)
+
+
+    # print(ast)
 
 if __name__ == '__main__':
     main()

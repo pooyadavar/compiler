@@ -1,0 +1,22 @@
+int shn59(int ucm40, int ofx52) {
+if (false)
+{
+printf("Unreachable
+");
+}
+int nut23 = (ucm40 + ofx52);
+return nut23;
+}
+int rkk2() {
+int xuh1 = 5;
+int ach41 = 10;
+int kqt64 = shn59(xuh1, ach41);
+if (false)
+{
+printf("Unreachable
+");
+}
+printf("%d\n", kqt64);
+int unused_0 = 264;
+return 0;
+}

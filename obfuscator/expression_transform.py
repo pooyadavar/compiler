@@ -71,12 +71,12 @@ class ExpressionTransformer:
     def rewrite_binary(self, node):
         if node.op == '+':
             # a + b → a - (-b)
-            if random.random() < 0.6:
-                return BinaryOp('-', node.left, UnaryOp('-', node.right))
+            # if random.random() < 1.0:
+            return BinaryOp('-', node.left, UnaryOp('-', node.right))
 
         elif node.op == '-':
             # a - b → a + (-b)
-            if random.random() < 0.6:
+            if random.random() < 1.0:
                 return BinaryOp('+', node.left, UnaryOp('-', node.right))
 
         elif node.op == '*':
@@ -86,7 +86,7 @@ class ExpressionTransformer:
 
         elif node.op == '==':
             # a == b → !(a != b)
-            if random.random() < 0.5:
+            if random.random() < 1.0:
                 inner = BinaryOp('!=', node.left, node.right)
                 return UnaryOp('!', inner)
 
@@ -94,6 +94,6 @@ class ExpressionTransformer:
 
     def rewrite_unary(self, node):
         if node.op == '-' and isinstance(node.operand, Variable):
-            if random.random() < 0.5:
+            if random.random() < 1.0:
                 return BinaryOp('-', Literal(0), node.operand)
         return node
