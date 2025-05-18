@@ -3,6 +3,8 @@ from obfuscator.parser.ObfuMiniCLexer import ObfuMiniCLexer
 from obfuscator.parser.ObfuMiniCParser import ObfuMiniCParser
 from obfuscator.ast_builder import ASTBuilder
 from obfuscator.obfuscator import NameObfuscator 
+from obfuscator.deadcode import DeadCodeInserter
+
 
 def main():
     input_stream = FileStream("input/input.mc") 
@@ -16,6 +18,11 @@ def main():
     #change name of variables
     obfuscator = NameObfuscator()
     obfuscator.obfuscate(ast)
+
+    #add dead code 
+    dead_inserter = DeadCodeInserter()
+    dead_inserter.insert(ast)
+
     print(ast)
 
 if __name__ == '__main__':
