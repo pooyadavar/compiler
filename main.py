@@ -4,6 +4,7 @@ from obfuscator.parser.ObfuMiniCParser import ObfuMiniCParser
 from obfuscator.ast_builder import ASTBuilder
 from obfuscator.obfuscator import NameObfuscator 
 from obfuscator.deadcode import DeadCodeInserter
+from obfuscator.expression_transform import ExpressionTransformer
 
 
 def main():
@@ -22,6 +23,9 @@ def main():
     #add dead code 
     dead_inserter = DeadCodeInserter()
     dead_inserter.insert(ast)
+
+    transformer = ExpressionTransformer()
+    transformer.transform(ast)
 
     print(ast)
 
