@@ -2,7 +2,7 @@ from antlr4 import FileStream, CommonTokenStream
 from obfuscator.parser.ObfuMiniCLexer import ObfuMiniCLexer
 from obfuscator.parser.ObfuMiniCParser import ObfuMiniCParser
 from obfuscator.ast_builder import ASTBuilder
-from obfuscator.obfuscator import NameObfuscator 
+from obfuscator.name_obfuscator import NameObfuscator 
 from obfuscator.deadcode import DeadCodeInserter
 from obfuscator.expression_transform import ExpressionTransformer
 from obfuscator.code_generator import CodeGenerator

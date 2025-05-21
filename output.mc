@@ -1,29 +1,44 @@
-int qai23(int bwu70, int mlf71) {
+int ieb724(int jsc240, int uhs315) {
     int _f0_state = 0;
-    int lxw33;
+    int isp39;
 _f0_dispatcher:
     switch (_f0_state) {
         case 0: goto _f0_case_0;
         case 1: goto _f0_case_1;
-        case 2: goto _f0_end;
+        case 2: goto _f0_case_2;
+        case 3: goto _f0_end;
     }
     {
     _f0_case_0:
-        lxw33 = (bwu70 - (-mlf71));
+        if (0)
+        {
+            printf("Unreachable\\n");
+        }
         _f0_state = 1;
         goto _f0_dispatcher;
     }
     {
     _f0_case_1:
-        return lxw33;
+        isp39 = (jsc240 - (-uhs315));
+        _f0_state = 2;
+        goto _f0_dispatcher;
+    }
+    {
+    _f0_case_2:
+        return isp39;
     }
     {
     _f0_end:
         return 0;
     }
 }
-int jsx33() {
+int main() {
     int _f1_state = 0;
+    int mdh194;
+    int qmm162;
+    int qrs745;
+    int unused_0;
+    int unused_1;
 _f1_dispatcher:
     switch (_f1_state) {
         case 0: goto _f1_case_0;
@@ -32,43 +47,57 @@ _f1_dispatcher:
         case 3: goto _f1_case_3;
         case 4: goto _f1_case_4;
         case 5: goto _f1_case_5;
-        case 6: goto _f1_end;
+        case 6: goto _f1_case_6;
+        case 7: goto _f1_case_7;
+        case 8: goto _f1_end;
     }
     {
     _f1_case_0:
-        int ueu46 = 3;
+        mdh194 = 3;
         _f1_state = 1;
         goto _f1_dispatcher;
     }
     {
     _f1_case_1:
-        int ahf45 = 4;
+        unused_0 = 224;
         _f1_state = 2;
         goto _f1_dispatcher;
     }
     {
     _f1_case_2:
-        if (0)
-        {
-            printf("Unreachable\\n");
-        }
+        qrs745 = 4;
         _f1_state = 3;
         goto _f1_dispatcher;
     }
     {
     _f1_case_3:
-        int rne28 = qai23(ueu46, ahf45);
+        if (0)
+        {
+            printf("Unreachable\\n");
+        }
         _f1_state = 4;
         goto _f1_dispatcher;
     }
     {
     _f1_case_4:
-        printf("%d\n", rne28);
+        qmm162 = ieb724(mdh194, qrs745);
         _f1_state = 5;
         goto _f1_dispatcher;
     }
     {
     _f1_case_5:
+        printf("%d\n", qmm162);
+        _f1_state = 6;
+        goto _f1_dispatcher;
+    }
+    {
+    _f1_case_6:
+        unused_1 = 237;
+        _f1_state = 7;
+        goto _f1_dispatcher;
+    }
+    {
+    _f1_case_7:
         return 0;
     }
     {
