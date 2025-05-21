@@ -105,7 +105,11 @@ class CodeGenerator:
 
     def visit_expr(self, expr):
         if isinstance(expr, Literal):
-            return f'"{expr.value}"' if isinstance(expr.value, str) else str(expr.value)
+            if isinstance(expr.value, str):
+                escaped = expr.value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+                return f'"{escaped}"'
+            else:
+                return str(expr.value)
 
         elif isinstance(expr, Variable):
             return expr.name

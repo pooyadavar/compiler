@@ -1,20 +1,11 @@
-int add(int a, int b) {
-    int result = a + b;
-    return result;
+int sum(int a, int b) {
+int result = a + b;
+return result;
 }
-
 int main() {
-    int x = 5;
-    int y = 10;
-    int sum = add(x, y);
-    printf("%d\n", sum);
-
-    while(x==5){
-        printf("sample");
-    }
-    int i = 0;
-    for (i = 0; i < 5; i = i + 1) {
-        printf("i is %d\n", i);
-    }
-    return 0;
+int x = 3;
+int y = 4;
+int total = sum(x, y);
+printf("%d\n", total);
+return 0;
 }

@@ -40,7 +40,6 @@ class DeadCodeInserter:
             self.insert(node.body)
 
     def make_dead_stmt(self):
-        """برمی‌گرداند یک Statement مرده"""
         kind = random.choice(["var", "if"])
 
         if kind == "var":
@@ -50,10 +49,10 @@ class DeadCodeInserter:
 
         elif kind == "if":
             return IfStmt(
-                condition=Literal(False),
+                condition=Literal(0),
                 then_branch=Block([
                     ExpressionStmt(
-                        FuncCall("printf", [Literal("Unreachable\n")])
+                        FuncCall("printf", [Literal("Unreachable\\n")])
                     )
                 ]),
                 else_branch=None
