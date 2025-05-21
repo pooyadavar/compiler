@@ -45,10 +45,16 @@ class FunctionInliner:
 
     def _try_inline_call(self, call: FuncCall, assign_to=None) -> Optional[List[Statement]]:
         target_func = self.function_map.get(call.name)
+                
         if not target_func:
             return None
 
-        # avoid inlining recursive calls for now
+        if any(isinstance(stmt, Label) and stmt.name.endswith("dispatcher") for stmt in target_func.body):
+            '''
+            not apply changes if it is unsafe state 
+            '''
+            return None
+
         if call.name == assign_to:
             return None
 

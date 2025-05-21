@@ -1,4 +1,4 @@
-int ulb51(int gvc57, int lnz44) {
+int dfa68(int beu23, int cdi95) {
     int _f0_state = 0;
 _f0_dispatcher:
     switch (_f0_state) {
@@ -8,20 +8,20 @@ _f0_dispatcher:
     }
     {
     _f0_case_0:
-        int trn49 = (gvc57 - (-lnz44));
+        int wcx29 = (beu23 - (-cdi95));
         _f0_state = 1;
         goto _f0_dispatcher;
     }
     {
     _f0_case_1:
-        return trn49;
+        return wcx29;
     }
     {
     _f0_end:
         return 0;
     }
 }
-int rqh12() {
+int dvf30() {
     int _f1_state = 0;
 _f1_dispatcher:
     switch (_f1_state) {
@@ -39,88 +39,64 @@ _f1_dispatcher:
     }
     {
     _f1_case_0:
-        int jpo19 = 5;
+        int unused_0 = 790;
         _f1_state = 1;
         goto _f1_dispatcher;
     }
     {
     _f1_case_1:
-        int unused_0 = 802;
+        int lwl97 = 5;
         _f1_state = 2;
         goto _f1_dispatcher;
     }
     {
     _f1_case_2:
-        int ddb23 = 10;
+        int qtx28 = 10;
         _f1_state = 3;
         goto _f1_dispatcher;
     }
     {
     _f1_case_3:
-        int gvc57_0 = jpo19;
-        int lnz44_1 = ddb23;
-        int _f0_state_2 = 0;
-    _f0_dispatcher:
-        switch (_f0_state) {
-            case 0: goto _f0_case_0;
-            case 1: goto _f0_case_1;
-            case 2: goto _f0_end;
-        }
-        {
-        _f0_case_0:
-            int trn49_3 = (gvc57_0 - (-lnz44_1));
-            Variable:
-  name: '_f0_state'
- = 1;
-            goto _f0_dispatcher;
-        }
-        {
-        _f0_case_1:
-            return trn49_3;
-        }
-        {
-        _f0_end:
-            return 0;
-        }
+        int dzh53 = dfa68(lwl97, qtx28);
         _f1_state = 4;
         goto _f1_dispatcher;
     }
     {
     _f1_case_4:
-        if (False)
-        {
-            printf("Unreachable
-");
-        }
+        printf("%d\n", dzh53);
         _f1_state = 5;
         goto _f1_dispatcher;
     }
     {
     _f1_case_5:
-        printf("%d\n", tvm86);
+        while ((!(lwl97 != 5)))
+        {
+            printf("sample");
+        }
         _f1_state = 6;
         goto _f1_dispatcher;
     }
     {
     _f1_case_6:
-        while ((!(jpo19 != 5)))
+        if (False)
         {
-            printf("sample");
+            printf("Unreachable
+");
         }
         _f1_state = 7;
         goto _f1_dispatcher;
     }
     {
     _f1_case_7:
-        int oyg57 = 0;
+        int uys50 = 0;
         _f1_state = 8;
         goto _f1_dispatcher;
     }
     {
     _f1_case_8:
-        for (oyg57 = 0; (oyg57 < 5); oyg57 = (oyg57 - (-1)))
+        for (uys50 = 0; (uys50 < 5); uys50 = (uys50 - (-1)))
         {
-            printf("i is %d\n", oyg57);
+            printf("i is %d\n", uys50);
         }
         _f1_state = 9;
         goto _f1_dispatcher;
