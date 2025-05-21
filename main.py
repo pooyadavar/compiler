@@ -2,12 +2,12 @@ from antlr4 import FileStream, CommonTokenStream
 from obfuscator.parser.ObfuMiniCLexer import ObfuMiniCLexer
 from obfuscator.parser.ObfuMiniCParser import ObfuMiniCParser
 from obfuscator.ast_builder import ASTBuilder
-from obfuscator.obfuscator import NameObfuscator 
+from obfuscator.name_obfuscator import NameObfuscator 
 from obfuscator.deadcode import DeadCodeInserter
 from obfuscator.expression_transform import ExpressionTransformer
 from obfuscator.code_generator import CodeGenerator
 from obfuscator.control_flattening import ControlFlowFlattener
-
+from obfuscator.inliner import FunctionInliner
 
 def main():
     input_stream = FileStream("input/input.mc") 
@@ -29,10 +29,12 @@ def main():
     transformer = ExpressionTransformer()
     transformer.transform(ast)
 
-     # apply control flow flattening
+    # apply control flow flattening
     flattener = ControlFlowFlattener()
     flattener.flatten(ast)
     
+    inliner = FunctionInliner(ast)
+    inliner.inline()
 
     generator = CodeGenerator()
     code = generator.generate(ast)

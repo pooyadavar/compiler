@@ -38,10 +38,9 @@ class ASTBuilder(ObfuMiniCVisitor):
 
     def visitCaseBlock(self, ctx):
         value = self.visit(ctx.literal())
-        label_name = f"case_{value}"  # یا هر نام دلخواه
+        label_name = f"case_{value}"  
         label = Label(label_name)
         stmt = self.visit(ctx.stmt())
-        # اینجا اگر بخواهی می‌توانی label و stmt را به نحوی با هم ترکیب کنی
         return SwitchCase(value, label)
 
     def visitLabelStmt(self, ctx):

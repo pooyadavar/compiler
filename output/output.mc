@@ -1,6 +1,6 @@
-int jlp673(int ktc54, int ifc842) {
+int ipj1(int mvd353, int lli209) {
     int _f0_state = 0;
-    int lan900;
+    int szq25;
 _f0_dispatcher:
     switch (_f0_state) {
         case 0: goto _f0_case_0;
@@ -9,13 +9,13 @@ _f0_dispatcher:
     }
     {
     _f0_case_0:
-        lan900 = (ktc54 - (-ifc842));
+        szq25 = (mvd353 - (-lli209));
         _f0_state = 1;
         goto _f0_dispatcher;
     }
     {
     _f0_case_1:
-        return lan900;
+        return szq25;
     }
     {
     _f0_end:
@@ -24,13 +24,12 @@ _f0_dispatcher:
 }
 int main() {
     int _f1_state = 0;
-    int hfu508;
     int i;
-    int kqh858;
-    int ssn932;
-    int tud211;
+    int mpw457;
+    int qix614;
+    int ueq586;
     int unused_0;
-    int unused_1;
+    int uyn462;
 _f1_dispatcher:
     switch (_f1_state) {
         case 0: goto _f1_case_0;
@@ -48,69 +47,64 @@ _f1_dispatcher:
     }
     {
     _f1_case_0:
-        kqh858 = 5;
+        if (0)
+        {
+            printf("Unreachable\\n");
+        }
         _f1_state = 1;
         goto _f1_dispatcher;
     }
     {
     _f1_case_1:
-        ssn932 = 10;
+        qix614 = 5;
         _f1_state = 2;
         goto _f1_dispatcher;
     }
     {
     _f1_case_2:
-        hfu508 = jlp673(kqh858, ssn932);
+        uyn462 = 10;
         _f1_state = 3;
         goto _f1_dispatcher;
     }
     {
     _f1_case_3:
-        printf("%d\n", hfu508);
+        unused_0 = 149;
         _f1_state = 4;
         goto _f1_dispatcher;
     }
     {
     _f1_case_4:
-        unused_0 = 423;
+        mpw457 = ipj1(qix614, uyn462);
         _f1_state = 5;
         goto _f1_dispatcher;
     }
     {
     _f1_case_5:
-        while ((!(kqh858 != 5)))
-        {
-            printf("sample");
-            if (0)
-            {
-                printf("Unreachable\\n");
-            }
-            x = 0;
-        }
+        printf("%d\n", mpw457);
         _f1_state = 6;
         goto _f1_dispatcher;
     }
     {
     _f1_case_6:
-        tud211 = 0;
+        while ((!(qix614 != 5)))
+        {
+            printf("sample");
+            x = 0;
+        }
         _f1_state = 7;
         goto _f1_dispatcher;
     }
     {
     _f1_case_7:
-        unused_1 = 672;
+        ueq586 = 0;
         _f1_state = 8;
         goto _f1_dispatcher;
     }
     {
     _f1_case_8:
-        for (; i = (tud211 - (-1)); )
+        for (; i = (ueq586 - (-1)); )
         {
-            if (0)
-            {
-                printf("Unreachable\\n");
-            }
-            printf("i is %d\n", tud211);
+            printf("i is %d\n", ueq586);
         }
         _f1_state = 9;
         goto _f1_dispatcher;

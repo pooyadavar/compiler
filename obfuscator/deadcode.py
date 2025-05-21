@@ -13,7 +13,7 @@ class DeadCodeInserter:
         elif isinstance(node, Function):
             new_body = []
             for stmt in node.body:
-                if random.random() < 0.3:  # با احتمال ۳۰٪ قبل از هر دستور یک dead code اضافه کن
+                if random.random() < 0.3: 
                     new_body.append(self.make_dead_stmt())
                 self.insert(stmt)
                 new_body.append(stmt)
@@ -40,7 +40,6 @@ class DeadCodeInserter:
             self.insert(node.body)
 
     def make_dead_stmt(self):
-        """برمی‌گرداند یک Statement مرده"""
         kind = random.choice(["var", "if"])
 
         if kind == "var":
@@ -50,10 +49,10 @@ class DeadCodeInserter:
 
         elif kind == "if":
             return IfStmt(
-                condition=Literal(False),
+                condition=Literal(0),
                 then_branch=Block([
                     ExpressionStmt(
-                        FuncCall("printf", [Literal("Unreachable\n")])
+                        FuncCall("printf", [Literal("Unreachable\\n")])
                     )
                 ]),
                 else_branch=None

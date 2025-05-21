@@ -36,7 +36,8 @@ class CodeGenerator:
 
         elif isinstance(node, Assignment):
             expr = self.visit_expr(node.value)
-            self.emit(f"{node.target.name} = {expr};")
+            target = node.target.name if isinstance(node.target, Variable) else str(node.target)
+            self.emit(f"{target} = {expr};")
 
         elif isinstance(node, Return):
             expr = self.visit_expr(node.value)
@@ -104,7 +105,11 @@ class CodeGenerator:
 
     def visit_expr(self, expr):
         if isinstance(expr, Literal):
-            return f'"{expr.value}"' if isinstance(expr.value, str) else str(expr.value)
+            if isinstance(expr.value, str):
+                escaped = expr.value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+                return f'"{escaped}"'
+            else:
+                return str(expr.value)
 
         elif isinstance(expr, Variable):
             return expr.name
@@ -123,9 +128,8 @@ class CodeGenerator:
             return f"{expr.name}({args})"
 
         elif isinstance(expr, Assignment):
-            target = expr.target
+            target = expr.target.name if isinstance(expr.target, Variable) else str(expr.target)
             value = self.visit_expr(expr.value)
             return f"{target} = {value}"
-
         else:
             return f"/* Unknown expr: {type(expr).__name__} */"
