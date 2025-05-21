@@ -27,7 +27,6 @@ class ControlFlowFlattener:
         state_decl = VariableDecl("int", state_var, Literal(0))
         new_body = [state_decl]
 
-        # Declare all variables at the function scope
         for var in sorted(all_vars.union(returned_vars)):
             new_body.append(VariableDecl("int", var, None))
 
@@ -39,7 +38,7 @@ class ControlFlowFlattener:
             label = Label(case_label_name)
             case_body = []
 
-            # Handle statements
+  
             if isinstance(stmt, VariableDecl):
                 init = getattr(stmt, 'init_expr', None) or getattr(stmt, 'init', None) or getattr(stmt, 'value', None) or getattr(stmt, 'initializer', None)
                 if init is not None:
@@ -49,7 +48,7 @@ class ControlFlowFlattener:
             elif isinstance(stmt, ExpressionStmt) and isinstance(stmt.expr, FuncCall):
                 case_body.append(stmt)
             elif isinstance(stmt, ForStmt):
-                # Handle ForStmt init
+        
                 init = stmt.init
                 loop_var = None
                 if isinstance(init, VariableDecl):
@@ -64,7 +63,7 @@ class ControlFlowFlattener:
                     if isinstance(init.expr.target, Variable):
                         loop_var = init.expr.target.name
                     case_body.append(init.expr)
-                # Ensure consistent loop variable
+
                 cond = stmt.cond
                 update = stmt.update
                 if loop_var:
@@ -79,7 +78,7 @@ class ControlFlowFlattener:
                         if isinstance(update.expr.value, BinaryOp) and isinstance(update.expr.value.left, Variable):
                             update.expr.value.left = Variable(loop_var)
                 case_body.append(ForStmt(
-                    init=None,  # Init handled above
+                    init=None,  
                     cond=cond,
                     update=update,
                     body=stmt.body
@@ -99,7 +98,6 @@ class ControlFlowFlattener:
             dispatcher_cases.append(SwitchCase(Literal(i), label, None))
             case_bodies.append(Block([label] + case_body))
 
-        # Append final block
         end_label = Label(end_label_name)
         dispatcher_cases.append(SwitchCase(Literal(len(func.body)), end_label, None))
         case_bodies.append(Block([end_label, Return(Literal(0))]))
