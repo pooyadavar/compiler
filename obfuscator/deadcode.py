@@ -13,7 +13,7 @@ class DeadCodeInserter:
         elif isinstance(node, Function):
             new_body = []
             for stmt in node.body:
-                if random.random() < 0.3:  # با احتمال ۳۰٪ قبل از هر دستور یک dead code اضافه کن
+                if random.random() < 0.3: 
                     new_body.append(self.make_dead_stmt())
                 self.insert(stmt)
                 new_body.append(stmt)
