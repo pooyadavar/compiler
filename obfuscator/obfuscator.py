@@ -106,4 +106,4 @@ class NameObfuscator:
                 node.name = self.name_map[node.name]
 
         elif isinstance(node, Literal):
-            pass  # هیچ کاری لازم نیست
+            pass 

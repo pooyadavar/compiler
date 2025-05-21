@@ -67,7 +67,7 @@ class FunctionInliner:
         for param, arg in zip(target_func.params, arg_values):
             fresh_name = self._fresh_name(param.name)
             param_names.append(fresh_name)
-            param_mapping[param.name] = fresh_name  # 💡 map old name to new name
+            param_mapping[param.name] = fresh_name  
             inlined_stmts.append(VariableDecl(param.param_type, fresh_name, arg))
 
         body_copy = copy.deepcopy(target_func.body)
