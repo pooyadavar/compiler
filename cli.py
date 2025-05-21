@@ -1,5 +1,6 @@
 import argparse
 import os
+import subprocess
 from antlr4 import *
 from obfuscator.parser.ObfuMiniCLexer import ObfuMiniCLexer
 from obfuscator.parser.ObfuMiniCParser import ObfuMiniCParser
@@ -11,7 +12,7 @@ from obfuscator.expression_transform import ExpressionTransformer
 from obfuscator.control_flattening import ControlFlowFlattener
 from obfuscator.inliner import FunctionInliner
 
-def run_pipeline(input_path, output_path, stages):
+def run_pipeline(input_path, output_path, stages, check_runtime=False):
     # Step 1: Parse input file
     input_stream = FileStream(input_path)
     lexer = ObfuMiniCLexer(input_stream)
@@ -41,8 +42,34 @@ def run_pipeline(input_path, output_path, stages):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w") as f:
         f.write(code)
-
     print(f"[✓] Obfuscated code saved to {output_path}")
+
+    # Step 6: Runtime behavior check
+    if check_runtime:
+        run_and_compare(input_path, output_path)
+
+def run_and_compare(original_path, obfuscated_path):
+    def compile_and_run(src_path):
+        bin_path = src_path.replace(".mc", ".out")
+        compile_cmd = ["gcc", src_path, "-o", bin_path]
+        try:
+            subprocess.run(compile_cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            result = subprocess.run([bin_path], check=True, capture_output=True, text=True)
+            return result.stdout.strip()
+        except subprocess.CalledProcessError as e:
+            print(f"[✗] Error: {e.stderr}")
+            return None
+
+    print("[*] Checking runtime equivalence...")
+    orig_output = compile_and_run(original_path)
+    obfus_output = compile_and_run(obfuscated_path)
+
+    if orig_output == obfus_output:
+        print("[✓] Runtime outputs match. Equivalence confirmed.")
+    else:
+        print("[✗] Output mismatch!")
+        print("Original:", orig_output)
+        print("Obfuscated:", obfus_output)
 
 def main():
     parser = argparse.ArgumentParser(description="Mini-C Obfuscator CLI")
@@ -54,6 +81,7 @@ def main():
     parser.add_argument("--flatten", action="store_true", help="Apply control flow flattening")
     parser.add_argument("--inline", action="store_true", help="Inline simple functions")
     parser.add_argument("--all", action="store_true", help="Apply all transformations")
+    parser.add_argument("--check", action="store_true", help="Run GCC equivalence check")
 
     args = parser.parse_args()
 
@@ -67,7 +95,7 @@ def main():
         if args.flatten: selected_stages.append("flatten")
         if args.inline: selected_stages.append("inline")
 
-    run_pipeline(args.input, args.output, selected_stages)
+    run_pipeline(args.input, args.output, selected_stages, args.check)
 
 if __name__ == "__main__":
     main()
