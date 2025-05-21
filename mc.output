@@ -1,30 +1,16 @@
-int shn59(int ucm40, int ofx52) {
-if (false)
-{
-printf("Unreachable
-");
+int tuy51(int xeg53, int vpo25) {
+int por55 = (xeg53 + vpo25);
+return por55;
 }
-
-                    here we have in bug --> [[[[
-                        int nut23 = (ucm40 + ofx52);
-                    ]]]]
-                    it have to be --> [[[[
-                        int nut23 = (ucm40 -( - ofx52 ) );
-                    ]]]]
-
-
-return nut23;
-}
-int rkk2() {
-int xuh1 = 5;
-int ach41 = 10;
-int kqt64 = shn59(xuh1, ach41);
-if (false)
-{
-printf("Unreachable
-");
-}
-printf("%d\n", kqt64);
-int unused_0 = 264;
+int nzv70() {
+int plx6 = 5;
+int cfe52 = 10;
+int nyw28 = tuy51(plx6, cfe52);
+printf("%d\n", nyw28);
+int unused_0 = 617;
 return 0;
+while ((plx6 == 5))
+{
+printf("sample", );
+}
 }

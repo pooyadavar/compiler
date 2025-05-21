@@ -9,4 +9,11 @@ int main() {
     int sum = add(x, y);
     printf("%d\n", sum);
     return 0;
+    while(x==5){
+        printf("sample");
+    }
+    int i=0;
+    for(; i<5 ; i++){
+        printf("sample2");
+    }
 }

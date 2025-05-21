@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,40,282,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,40,276,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,1,0,1,0,5,
@@ -31,86 +31,83 @@ def serializedATN():
         1,20,1,20,1,20,5,20,225,8,20,10,20,12,20,228,9,20,1,21,1,21,1,21,
         5,21,233,8,21,10,21,12,21,236,9,21,1,22,1,22,1,22,5,22,241,8,22,
         10,22,12,22,244,9,22,1,23,1,23,1,23,3,23,249,8,23,1,24,1,24,1,24,
-        3,24,254,8,24,1,24,1,24,1,24,1,24,1,24,1,24,1,24,1,24,1,24,3,24,
-        265,8,24,1,24,1,24,1,24,1,24,1,24,3,24,272,8,24,1,25,1,25,1,25,5,
-        25,277,8,25,10,25,12,25,280,9,25,1,25,0,0,26,0,2,4,6,8,10,12,14,
-        16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,0,6,1,0,4,
-        6,1,0,17,18,1,0,19,22,1,0,23,24,1,0,25,27,2,0,23,24,28,28,297,0,
-        56,1,0,0,0,2,61,1,0,0,0,4,70,1,0,0,0,6,78,1,0,0,0,8,81,1,0,0,0,10,
-        85,1,0,0,0,12,93,1,0,0,0,14,98,1,0,0,0,16,100,1,0,0,0,18,116,1,0,
-        0,0,20,119,1,0,0,0,22,123,1,0,0,0,24,153,1,0,0,0,26,155,1,0,0,0,
-        28,188,1,0,0,0,30,190,1,0,0,0,32,192,1,0,0,0,34,197,1,0,0,0,36,205,
-        1,0,0,0,38,213,1,0,0,0,40,221,1,0,0,0,42,229,1,0,0,0,44,237,1,0,
-        0,0,46,248,1,0,0,0,48,271,1,0,0,0,50,273,1,0,0,0,52,55,3,2,1,0,53,
-        55,3,8,4,0,54,52,1,0,0,0,54,53,1,0,0,0,55,58,1,0,0,0,56,54,1,0,0,
-        0,56,57,1,0,0,0,57,59,1,0,0,0,58,56,1,0,0,0,59,60,5,0,0,1,60,1,1,
-        0,0,0,61,62,3,14,7,0,62,63,5,33,0,0,63,65,5,39,0,0,64,66,3,4,2,0,
-        65,64,1,0,0,0,65,66,1,0,0,0,66,67,1,0,0,0,67,68,5,40,0,0,68,69,3,
-        16,8,0,69,3,1,0,0,0,70,75,3,6,3,0,71,72,5,1,0,0,72,74,3,6,3,0,73,
-        71,1,0,0,0,74,77,1,0,0,0,75,73,1,0,0,0,75,76,1,0,0,0,76,5,1,0,0,
-        0,77,75,1,0,0,0,78,79,3,14,7,0,79,80,5,33,0,0,80,7,1,0,0,0,81,82,
-        3,14,7,0,82,83,3,10,5,0,83,84,5,2,0,0,84,9,1,0,0,0,85,90,3,12,6,
-        0,86,87,5,1,0,0,87,89,3,12,6,0,88,86,1,0,0,0,89,92,1,0,0,0,90,88,
-        1,0,0,0,90,91,1,0,0,0,91,11,1,0,0,0,92,90,1,0,0,0,93,96,5,33,0,0,
-        94,95,5,3,0,0,95,97,3,30,15,0,96,94,1,0,0,0,96,97,1,0,0,0,97,13,
-        1,0,0,0,98,99,7,0,0,0,99,15,1,0,0,0,100,105,5,7,0,0,101,104,3,8,
-        4,0,102,104,3,18,9,0,103,101,1,0,0,0,103,102,1,0,0,0,104,107,1,0,
-        0,0,105,103,1,0,0,0,105,106,1,0,0,0,106,108,1,0,0,0,107,105,1,0,
-        0,0,108,109,5,8,0,0,109,17,1,0,0,0,110,117,3,20,10,0,111,117,3,16,
-        8,0,112,117,3,22,11,0,113,117,3,24,12,0,114,117,3,26,13,0,115,117,
-        3,28,14,0,116,110,1,0,0,0,116,111,1,0,0,0,116,112,1,0,0,0,116,113,
-        1,0,0,0,116,114,1,0,0,0,116,115,1,0,0,0,117,19,1,0,0,0,118,120,3,
-        30,15,0,119,118,1,0,0,0,119,120,1,0,0,0,120,121,1,0,0,0,121,122,
-        5,2,0,0,122,21,1,0,0,0,123,124,5,9,0,0,124,125,5,39,0,0,125,126,
-        3,30,15,0,126,127,5,40,0,0,127,130,3,18,9,0,128,129,5,10,0,0,129,
-        131,3,18,9,0,130,128,1,0,0,0,130,131,1,0,0,0,131,23,1,0,0,0,132,
-        133,5,11,0,0,133,134,5,39,0,0,134,135,3,30,15,0,135,136,5,40,0,0,
-        136,137,3,18,9,0,137,154,1,0,0,0,138,139,5,12,0,0,139,141,5,39,0,
-        0,140,142,3,30,15,0,141,140,1,0,0,0,141,142,1,0,0,0,142,143,1,0,
-        0,0,143,145,5,2,0,0,144,146,3,30,15,0,145,144,1,0,0,0,145,146,1,
-        0,0,0,146,147,1,0,0,0,147,149,5,2,0,0,148,150,3,30,15,0,149,148,
-        1,0,0,0,149,150,1,0,0,0,150,151,1,0,0,0,151,152,5,40,0,0,152,154,
-        3,18,9,0,153,132,1,0,0,0,153,138,1,0,0,0,154,25,1,0,0,0,155,157,
-        5,13,0,0,156,158,3,30,15,0,157,156,1,0,0,0,157,158,1,0,0,0,158,159,
-        1,0,0,0,159,160,5,2,0,0,160,27,1,0,0,0,161,162,5,37,0,0,162,163,
-        5,39,0,0,163,168,5,31,0,0,164,165,5,1,0,0,165,167,3,30,15,0,166,
-        164,1,0,0,0,167,170,1,0,0,0,168,166,1,0,0,0,168,169,1,0,0,0,169,
-        171,1,0,0,0,170,168,1,0,0,0,171,172,5,40,0,0,172,189,5,2,0,0,173,
-        174,5,38,0,0,174,175,5,39,0,0,175,183,5,31,0,0,176,178,5,1,0,0,177,
-        179,5,14,0,0,178,177,1,0,0,0,178,179,1,0,0,0,179,180,1,0,0,0,180,
-        182,5,33,0,0,181,176,1,0,0,0,182,185,1,0,0,0,183,181,1,0,0,0,183,
-        184,1,0,0,0,184,186,1,0,0,0,185,183,1,0,0,0,186,187,5,40,0,0,187,
-        189,5,2,0,0,188,161,1,0,0,0,188,173,1,0,0,0,189,29,1,0,0,0,190,191,
-        3,32,16,0,191,31,1,0,0,0,192,195,3,34,17,0,193,194,5,3,0,0,194,196,
-        3,32,16,0,195,193,1,0,0,0,195,196,1,0,0,0,196,33,1,0,0,0,197,202,
-        3,36,18,0,198,199,5,15,0,0,199,201,3,36,18,0,200,198,1,0,0,0,201,
-        204,1,0,0,0,202,200,1,0,0,0,202,203,1,0,0,0,203,35,1,0,0,0,204,202,
-        1,0,0,0,205,210,3,38,19,0,206,207,5,16,0,0,207,209,3,38,19,0,208,
-        206,1,0,0,0,209,212,1,0,0,0,210,208,1,0,0,0,210,211,1,0,0,0,211,
-        37,1,0,0,0,212,210,1,0,0,0,213,218,3,40,20,0,214,215,7,1,0,0,215,
-        217,3,40,20,0,216,214,1,0,0,0,217,220,1,0,0,0,218,216,1,0,0,0,218,
-        219,1,0,0,0,219,39,1,0,0,0,220,218,1,0,0,0,221,226,3,42,21,0,222,
-        223,7,2,0,0,223,225,3,42,21,0,224,222,1,0,0,0,225,228,1,0,0,0,226,
-        224,1,0,0,0,226,227,1,0,0,0,227,41,1,0,0,0,228,226,1,0,0,0,229,234,
-        3,44,22,0,230,231,7,3,0,0,231,233,3,44,22,0,232,230,1,0,0,0,233,
-        236,1,0,0,0,234,232,1,0,0,0,234,235,1,0,0,0,235,43,1,0,0,0,236,234,
-        1,0,0,0,237,242,3,46,23,0,238,239,7,4,0,0,239,241,3,46,23,0,240,
-        238,1,0,0,0,241,244,1,0,0,0,242,240,1,0,0,0,242,243,1,0,0,0,243,
-        45,1,0,0,0,244,242,1,0,0,0,245,246,7,5,0,0,246,249,3,46,23,0,247,
-        249,3,48,24,0,248,245,1,0,0,0,248,247,1,0,0,0,249,47,1,0,0,0,250,
-        251,5,33,0,0,251,253,5,39,0,0,252,254,3,50,25,0,253,252,1,0,0,0,
-        253,254,1,0,0,0,254,255,1,0,0,0,255,272,5,40,0,0,256,272,5,33,0,
-        0,257,272,5,32,0,0,258,272,5,30,0,0,259,272,5,29,0,0,260,272,5,31,
-        0,0,261,262,5,33,0,0,262,264,5,39,0,0,263,265,3,50,25,0,264,263,
-        1,0,0,0,264,265,1,0,0,0,265,266,1,0,0,0,266,272,5,40,0,0,267,268,
-        5,39,0,0,268,269,3,30,15,0,269,270,5,40,0,0,270,272,1,0,0,0,271,
-        250,1,0,0,0,271,256,1,0,0,0,271,257,1,0,0,0,271,258,1,0,0,0,271,
-        259,1,0,0,0,271,260,1,0,0,0,271,261,1,0,0,0,271,267,1,0,0,0,272,
-        49,1,0,0,0,273,278,3,30,15,0,274,275,5,1,0,0,275,277,3,30,15,0,276,
-        274,1,0,0,0,277,280,1,0,0,0,278,276,1,0,0,0,278,279,1,0,0,0,279,
-        51,1,0,0,0,280,278,1,0,0,0,32,54,56,65,75,90,96,103,105,116,119,
-        130,141,145,149,153,157,168,178,183,188,195,202,210,218,226,234,
-        242,248,253,264,271,278
+        3,24,254,8,24,1,24,1,24,1,24,1,24,1,24,1,24,1,24,1,24,1,24,1,24,
+        3,24,266,8,24,1,25,1,25,1,25,5,25,271,8,25,10,25,12,25,274,9,25,
+        1,25,0,0,26,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,
+        38,40,42,44,46,48,50,0,6,1,0,20,22,1,0,5,6,1,0,7,10,1,0,11,12,1,
+        0,13,15,2,0,11,12,16,16,289,0,56,1,0,0,0,2,61,1,0,0,0,4,70,1,0,0,
+        0,6,78,1,0,0,0,8,81,1,0,0,0,10,85,1,0,0,0,12,93,1,0,0,0,14,98,1,
+        0,0,0,16,100,1,0,0,0,18,116,1,0,0,0,20,119,1,0,0,0,22,123,1,0,0,
+        0,24,153,1,0,0,0,26,155,1,0,0,0,28,188,1,0,0,0,30,190,1,0,0,0,32,
+        192,1,0,0,0,34,197,1,0,0,0,36,205,1,0,0,0,38,213,1,0,0,0,40,221,
+        1,0,0,0,42,229,1,0,0,0,44,237,1,0,0,0,46,248,1,0,0,0,48,265,1,0,
+        0,0,50,267,1,0,0,0,52,55,3,2,1,0,53,55,3,8,4,0,54,52,1,0,0,0,54,
+        53,1,0,0,0,55,58,1,0,0,0,56,54,1,0,0,0,56,57,1,0,0,0,57,59,1,0,0,
+        0,58,56,1,0,0,0,59,60,5,0,0,1,60,1,1,0,0,0,61,62,3,14,7,0,62,63,
+        5,37,0,0,63,65,5,30,0,0,64,66,3,4,2,0,65,64,1,0,0,0,65,66,1,0,0,
+        0,66,67,1,0,0,0,67,68,5,31,0,0,68,69,3,16,8,0,69,3,1,0,0,0,70,75,
+        3,6,3,0,71,72,5,35,0,0,72,74,3,6,3,0,73,71,1,0,0,0,74,77,1,0,0,0,
+        75,73,1,0,0,0,75,76,1,0,0,0,76,5,1,0,0,0,77,75,1,0,0,0,78,79,3,14,
+        7,0,79,80,5,37,0,0,80,7,1,0,0,0,81,82,3,14,7,0,82,83,3,10,5,0,83,
+        84,5,34,0,0,84,9,1,0,0,0,85,90,3,12,6,0,86,87,5,35,0,0,87,89,3,12,
+        6,0,88,86,1,0,0,0,89,92,1,0,0,0,90,88,1,0,0,0,90,91,1,0,0,0,91,11,
+        1,0,0,0,92,90,1,0,0,0,93,96,5,37,0,0,94,95,5,1,0,0,95,97,3,30,15,
+        0,96,94,1,0,0,0,96,97,1,0,0,0,97,13,1,0,0,0,98,99,7,0,0,0,99,15,
+        1,0,0,0,100,105,5,32,0,0,101,104,3,8,4,0,102,104,3,18,9,0,103,101,
+        1,0,0,0,103,102,1,0,0,0,104,107,1,0,0,0,105,103,1,0,0,0,105,106,
+        1,0,0,0,106,108,1,0,0,0,107,105,1,0,0,0,108,109,5,33,0,0,109,17,
+        1,0,0,0,110,117,3,20,10,0,111,117,3,16,8,0,112,117,3,22,11,0,113,
+        117,3,24,12,0,114,117,3,26,13,0,115,117,3,28,14,0,116,110,1,0,0,
+        0,116,111,1,0,0,0,116,112,1,0,0,0,116,113,1,0,0,0,116,114,1,0,0,
+        0,116,115,1,0,0,0,117,19,1,0,0,0,118,120,3,30,15,0,119,118,1,0,0,
+        0,119,120,1,0,0,0,120,121,1,0,0,0,121,122,5,34,0,0,122,21,1,0,0,
+        0,123,124,5,27,0,0,124,125,5,30,0,0,125,126,3,30,15,0,126,127,5,
+        31,0,0,127,130,3,18,9,0,128,129,5,28,0,0,129,131,3,18,9,0,130,128,
+        1,0,0,0,130,131,1,0,0,0,131,23,1,0,0,0,132,133,5,25,0,0,133,134,
+        5,30,0,0,134,135,3,30,15,0,135,136,5,31,0,0,136,137,3,18,9,0,137,
+        154,1,0,0,0,138,139,5,26,0,0,139,141,5,30,0,0,140,142,3,30,15,0,
+        141,140,1,0,0,0,141,142,1,0,0,0,142,143,1,0,0,0,143,145,5,34,0,0,
+        144,146,3,30,15,0,145,144,1,0,0,0,145,146,1,0,0,0,146,147,1,0,0,
+        0,147,149,5,34,0,0,148,150,3,30,15,0,149,148,1,0,0,0,149,150,1,0,
+        0,0,150,151,1,0,0,0,151,152,5,31,0,0,152,154,3,18,9,0,153,132,1,
+        0,0,0,153,138,1,0,0,0,154,25,1,0,0,0,155,157,5,29,0,0,156,158,3,
+        30,15,0,157,156,1,0,0,0,157,158,1,0,0,0,158,159,1,0,0,0,159,160,
+        5,34,0,0,160,27,1,0,0,0,161,162,5,23,0,0,162,163,5,30,0,0,163,168,
+        5,19,0,0,164,165,5,35,0,0,165,167,3,30,15,0,166,164,1,0,0,0,167,
+        170,1,0,0,0,168,166,1,0,0,0,168,169,1,0,0,0,169,171,1,0,0,0,170,
+        168,1,0,0,0,171,172,5,31,0,0,172,189,5,34,0,0,173,174,5,24,0,0,174,
+        175,5,30,0,0,175,183,5,19,0,0,176,178,5,35,0,0,177,179,5,2,0,0,178,
+        177,1,0,0,0,178,179,1,0,0,0,179,180,1,0,0,0,180,182,5,37,0,0,181,
+        176,1,0,0,0,182,185,1,0,0,0,183,181,1,0,0,0,183,184,1,0,0,0,184,
+        186,1,0,0,0,185,183,1,0,0,0,186,187,5,31,0,0,187,189,5,34,0,0,188,
+        161,1,0,0,0,188,173,1,0,0,0,189,29,1,0,0,0,190,191,3,32,16,0,191,
+        31,1,0,0,0,192,195,3,34,17,0,193,194,5,1,0,0,194,196,3,32,16,0,195,
+        193,1,0,0,0,195,196,1,0,0,0,196,33,1,0,0,0,197,202,3,36,18,0,198,
+        199,5,3,0,0,199,201,3,36,18,0,200,198,1,0,0,0,201,204,1,0,0,0,202,
+        200,1,0,0,0,202,203,1,0,0,0,203,35,1,0,0,0,204,202,1,0,0,0,205,210,
+        3,38,19,0,206,207,5,4,0,0,207,209,3,38,19,0,208,206,1,0,0,0,209,
+        212,1,0,0,0,210,208,1,0,0,0,210,211,1,0,0,0,211,37,1,0,0,0,212,210,
+        1,0,0,0,213,218,3,40,20,0,214,215,7,1,0,0,215,217,3,40,20,0,216,
+        214,1,0,0,0,217,220,1,0,0,0,218,216,1,0,0,0,218,219,1,0,0,0,219,
+        39,1,0,0,0,220,218,1,0,0,0,221,226,3,42,21,0,222,223,7,2,0,0,223,
+        225,3,42,21,0,224,222,1,0,0,0,225,228,1,0,0,0,226,224,1,0,0,0,226,
+        227,1,0,0,0,227,41,1,0,0,0,228,226,1,0,0,0,229,234,3,44,22,0,230,
+        231,7,3,0,0,231,233,3,44,22,0,232,230,1,0,0,0,233,236,1,0,0,0,234,
+        232,1,0,0,0,234,235,1,0,0,0,235,43,1,0,0,0,236,234,1,0,0,0,237,242,
+        3,46,23,0,238,239,7,4,0,0,239,241,3,46,23,0,240,238,1,0,0,0,241,
+        244,1,0,0,0,242,240,1,0,0,0,242,243,1,0,0,0,243,45,1,0,0,0,244,242,
+        1,0,0,0,245,246,7,5,0,0,246,249,3,46,23,0,247,249,3,48,24,0,248,
+        245,1,0,0,0,248,247,1,0,0,0,249,47,1,0,0,0,250,251,5,37,0,0,251,
+        253,5,30,0,0,252,254,3,50,25,0,253,252,1,0,0,0,253,254,1,0,0,0,254,
+        255,1,0,0,0,255,266,5,31,0,0,256,266,5,37,0,0,257,266,5,36,0,0,258,
+        266,5,18,0,0,259,266,5,17,0,0,260,266,5,19,0,0,261,262,5,30,0,0,
+        262,263,3,30,15,0,263,264,5,31,0,0,264,266,1,0,0,0,265,250,1,0,0,
+        0,265,256,1,0,0,0,265,257,1,0,0,0,265,258,1,0,0,0,265,259,1,0,0,
+        0,265,260,1,0,0,0,265,261,1,0,0,0,266,49,1,0,0,0,267,272,3,30,15,
+        0,268,269,5,35,0,0,269,271,3,30,15,0,270,268,1,0,0,0,271,274,1,0,
+        0,0,272,270,1,0,0,0,272,273,1,0,0,0,273,51,1,0,0,0,274,272,1,0,0,
+        0,31,54,56,65,75,90,96,103,105,116,119,130,141,145,149,153,157,168,
+        178,183,188,195,202,210,218,226,234,242,248,253,265,272
     ]
 
 class ObfuMiniCParser ( Parser ):
@@ -123,25 +120,22 @@ class ObfuMiniCParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "','", "';'", "'='", "'int'", "'char'", 
-                     "'bool'", "'{'", "'}'", "'if'", "'else'", "'while'", 
-                     "'for'", "'return'", "'&'", "'||'", "'&&'", "'=='", 
+    literalNames = [ "<INVALID>", "'='", "'&'", "'||'", "'&&'", "'=='", 
                      "'!='", "'<'", "'<='", "'>'", "'>='", "'+'", "'-'", 
                      "'*'", "'/'", "'%'", "'!'", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "'printf'", "'scanf'", "'('", 
-                     "')'" ]
+                     "<INVALID>", "'int'", "'char'", "'bool'", "'printf'", 
+                     "'scanf'", "'while'", "'for'", "'if'", "'else'", "'return'", 
+                     "'('", "')'", "'{'", "'}'", "';'", "','" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "BOOL", "CHAR", "STRING", "NUMBER", "ID", 
-                      "WS", "LINE_COMMENT", "BLOCK_COMMENT", "PRINTF", "SCANF", 
-                      "LPAREN", "RPAREN" ]
+                      "<INVALID>", "BOOL", "CHAR", "STRING", "INT", "CHAR_TOK", 
+                      "BOOL_TOK", "PRINTF", "SCANF", "WHILE", "FOR", "IF", 
+                      "ELSE", "RETURN", "LPAREN", "RPAREN", "LBRACE", "RBRACE", 
+                      "SEMI", "COMMA", "NUMBER", "ID", "WS", "LINE_COMMENT", 
+                      "BLOCK_COMMENT" ]
 
     RULE_compilationUnit = 0
     RULE_funcDef = 1
@@ -194,30 +188,30 @@ class ObfuMiniCParser ( Parser ):
     T__13=14
     T__14=15
     T__15=16
-    T__16=17
-    T__17=18
-    T__18=19
-    T__19=20
-    T__20=21
-    T__21=22
-    T__22=23
-    T__23=24
-    T__24=25
-    T__25=26
-    T__26=27
-    T__27=28
-    BOOL=29
-    CHAR=30
-    STRING=31
-    NUMBER=32
-    ID=33
-    WS=34
-    LINE_COMMENT=35
-    BLOCK_COMMENT=36
-    PRINTF=37
-    SCANF=38
-    LPAREN=39
-    RPAREN=40
+    BOOL=17
+    CHAR=18
+    STRING=19
+    INT=20
+    CHAR_TOK=21
+    BOOL_TOK=22
+    PRINTF=23
+    SCANF=24
+    WHILE=25
+    FOR=26
+    IF=27
+    ELSE=28
+    RETURN=29
+    LPAREN=30
+    RPAREN=31
+    LBRACE=32
+    RBRACE=33
+    SEMI=34
+    COMMA=35
+    NUMBER=36
+    ID=37
+    WS=38
+    LINE_COMMENT=39
+    BLOCK_COMMENT=40
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -282,7 +276,7 @@ class ObfuMiniCParser ( Parser ):
             self.state = 56
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 112) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 7340032) != 0):
                 self.state = 54
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
@@ -376,7 +370,7 @@ class ObfuMiniCParser ( Parser ):
             self.state = 65
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 112) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 7340032) != 0):
                 self.state = 64
                 self.paramList()
 
@@ -407,6 +401,12 @@ class ObfuMiniCParser ( Parser ):
             else:
                 return self.getTypedRuleContext(ObfuMiniCParser.ParamContext,i)
 
+
+        def COMMA(self, i:int=None):
+            if i is None:
+                return self.getTokens(ObfuMiniCParser.COMMA)
+            else:
+                return self.getToken(ObfuMiniCParser.COMMA, i)
 
         def getRuleIndex(self):
             return ObfuMiniCParser.RULE_paramList
@@ -440,9 +440,9 @@ class ObfuMiniCParser ( Parser ):
             self.state = 75
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==1:
+            while _la==35:
                 self.state = 71
-                self.match(ObfuMiniCParser.T__0)
+                self.match(ObfuMiniCParser.COMMA)
                 self.state = 72
                 self.param()
                 self.state = 77
@@ -526,6 +526,9 @@ class ObfuMiniCParser ( Parser ):
             return self.getTypedRuleContext(ObfuMiniCParser.InitListContext,0)
 
 
+        def SEMI(self):
+            return self.getToken(ObfuMiniCParser.SEMI, 0)
+
         def getRuleIndex(self):
             return ObfuMiniCParser.RULE_varDecl
 
@@ -557,7 +560,7 @@ class ObfuMiniCParser ( Parser ):
             self.state = 82
             self.initList()
             self.state = 83
-            self.match(ObfuMiniCParser.T__1)
+            self.match(ObfuMiniCParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -580,6 +583,12 @@ class ObfuMiniCParser ( Parser ):
             else:
                 return self.getTypedRuleContext(ObfuMiniCParser.InitContext,i)
 
+
+        def COMMA(self, i:int=None):
+            if i is None:
+                return self.getTokens(ObfuMiniCParser.COMMA)
+            else:
+                return self.getToken(ObfuMiniCParser.COMMA, i)
 
         def getRuleIndex(self):
             return ObfuMiniCParser.RULE_initList
@@ -613,9 +622,9 @@ class ObfuMiniCParser ( Parser ):
             self.state = 90
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==1:
+            while _la==35:
                 self.state = 86
-                self.match(ObfuMiniCParser.T__0)
+                self.match(ObfuMiniCParser.COMMA)
                 self.state = 87
                 self.init()
                 self.state = 92
@@ -677,9 +686,9 @@ class ObfuMiniCParser ( Parser ):
             self.state = 96
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==3:
+            if _la==1:
                 self.state = 94
-                self.match(ObfuMiniCParser.T__2)
+                self.match(ObfuMiniCParser.T__0)
                 self.state = 95
                 self.expr()
 
@@ -700,6 +709,14 @@ class ObfuMiniCParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def INT(self):
+            return self.getToken(ObfuMiniCParser.INT, 0)
+
+        def CHAR_TOK(self):
+            return self.getToken(ObfuMiniCParser.CHAR_TOK, 0)
+
+        def BOOL_TOK(self):
+            return self.getToken(ObfuMiniCParser.BOOL_TOK, 0)
 
         def getRuleIndex(self):
             return ObfuMiniCParser.RULE_type
@@ -730,7 +747,7 @@ class ObfuMiniCParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 98
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 112) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 7340032) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -750,6 +767,12 @@ class ObfuMiniCParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def LBRACE(self):
+            return self.getToken(ObfuMiniCParser.LBRACE, 0)
+
+        def RBRACE(self):
+            return self.getToken(ObfuMiniCParser.RBRACE, 0)
 
         def varDecl(self, i:int=None):
             if i is None:
@@ -793,19 +816,19 @@ class ObfuMiniCParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 100
-            self.match(ObfuMiniCParser.T__6)
+            self.match(ObfuMiniCParser.LBRACE)
             self.state = 105
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 979009288948) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 229512255488) != 0):
                 self.state = 103
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [4, 5, 6]:
+                if token in [20, 21, 22]:
                     self.state = 101
                     self.varDecl()
                     pass
-                elif token in [2, 7, 9, 11, 12, 13, 23, 24, 28, 29, 30, 31, 32, 33, 37, 38, 39]:
+                elif token in [11, 12, 16, 17, 18, 19, 23, 24, 25, 26, 27, 29, 30, 32, 34, 36, 37]:
                     self.state = 102
                     self.stmt()
                     pass
@@ -817,7 +840,7 @@ class ObfuMiniCParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 108
-            self.match(ObfuMiniCParser.T__7)
+            self.match(ObfuMiniCParser.RBRACE)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -886,32 +909,32 @@ class ObfuMiniCParser ( Parser ):
             self.state = 116
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [2, 23, 24, 28, 29, 30, 31, 32, 33, 39]:
+            if token in [11, 12, 16, 17, 18, 19, 30, 34, 36, 37]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 110
                 self.exprStmt()
                 pass
-            elif token in [7]:
+            elif token in [32]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 111
                 self.blockStmt()
                 pass
-            elif token in [9]:
+            elif token in [27]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 112
                 self.ifStmt()
                 pass
-            elif token in [11, 12]:
+            elif token in [25, 26]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 113
                 self.loopStmt()
                 pass
-            elif token in [13]:
+            elif token in [29]:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 114
                 self.returnStmt()
                 pass
-            elif token in [37, 38]:
+            elif token in [23, 24]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 115
                 self.ioStmt()
@@ -934,6 +957,9 @@ class ObfuMiniCParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def SEMI(self):
+            return self.getToken(ObfuMiniCParser.SEMI, 0)
 
         def expr(self):
             return self.getTypedRuleContext(ObfuMiniCParser.ExprContext,0)
@@ -969,13 +995,13 @@ class ObfuMiniCParser ( Parser ):
             self.state = 119
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 566692413440) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 207233161216) != 0):
                 self.state = 118
                 self.expr()
 
 
             self.state = 121
-            self.match(ObfuMiniCParser.T__1)
+            self.match(ObfuMiniCParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -991,6 +1017,9 @@ class ObfuMiniCParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def IF(self):
+            return self.getToken(ObfuMiniCParser.IF, 0)
 
         def LPAREN(self):
             return self.getToken(ObfuMiniCParser.LPAREN, 0)
@@ -1008,6 +1037,9 @@ class ObfuMiniCParser ( Parser ):
             else:
                 return self.getTypedRuleContext(ObfuMiniCParser.StmtContext,i)
 
+
+        def ELSE(self):
+            return self.getToken(ObfuMiniCParser.ELSE, 0)
 
         def getRuleIndex(self):
             return ObfuMiniCParser.RULE_ifStmt
@@ -1036,7 +1068,7 @@ class ObfuMiniCParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 123
-            self.match(ObfuMiniCParser.T__8)
+            self.match(ObfuMiniCParser.IF)
             self.state = 124
             self.match(ObfuMiniCParser.LPAREN)
             self.state = 125
@@ -1050,7 +1082,7 @@ class ObfuMiniCParser ( Parser ):
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
                 self.state = 128
-                self.match(ObfuMiniCParser.T__9)
+                self.match(ObfuMiniCParser.ELSE)
                 self.state = 129
                 self.stmt()
 
@@ -1071,6 +1103,9 @@ class ObfuMiniCParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def WHILE(self):
+            return self.getToken(ObfuMiniCParser.WHILE, 0)
+
         def LPAREN(self):
             return self.getToken(ObfuMiniCParser.LPAREN, 0)
 
@@ -1087,6 +1122,15 @@ class ObfuMiniCParser ( Parser ):
         def stmt(self):
             return self.getTypedRuleContext(ObfuMiniCParser.StmtContext,0)
 
+
+        def FOR(self):
+            return self.getToken(ObfuMiniCParser.FOR, 0)
+
+        def SEMI(self, i:int=None):
+            if i is None:
+                return self.getTokens(ObfuMiniCParser.SEMI)
+            else:
+                return self.getToken(ObfuMiniCParser.SEMI, i)
 
         def getRuleIndex(self):
             return ObfuMiniCParser.RULE_loopStmt
@@ -1117,10 +1161,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 153
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [11]:
+            if token in [25]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 132
-                self.match(ObfuMiniCParser.T__10)
+                self.match(ObfuMiniCParser.WHILE)
                 self.state = 133
                 self.match(ObfuMiniCParser.LPAREN)
                 self.state = 134
@@ -1130,36 +1174,36 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 136
                 self.stmt()
                 pass
-            elif token in [12]:
+            elif token in [26]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 138
-                self.match(ObfuMiniCParser.T__11)
+                self.match(ObfuMiniCParser.FOR)
                 self.state = 139
                 self.match(ObfuMiniCParser.LPAREN)
                 self.state = 141
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 566692413440) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 207233161216) != 0):
                     self.state = 140
                     self.expr()
 
 
                 self.state = 143
-                self.match(ObfuMiniCParser.T__1)
+                self.match(ObfuMiniCParser.SEMI)
                 self.state = 145
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 566692413440) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 207233161216) != 0):
                     self.state = 144
                     self.expr()
 
 
                 self.state = 147
-                self.match(ObfuMiniCParser.T__1)
+                self.match(ObfuMiniCParser.SEMI)
                 self.state = 149
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 566692413440) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 207233161216) != 0):
                     self.state = 148
                     self.expr()
 
@@ -1187,6 +1231,12 @@ class ObfuMiniCParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def RETURN(self):
+            return self.getToken(ObfuMiniCParser.RETURN, 0)
+
+        def SEMI(self):
+            return self.getToken(ObfuMiniCParser.SEMI, 0)
 
         def expr(self):
             return self.getTypedRuleContext(ObfuMiniCParser.ExprContext,0)
@@ -1220,17 +1270,17 @@ class ObfuMiniCParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 155
-            self.match(ObfuMiniCParser.T__12)
+            self.match(ObfuMiniCParser.RETURN)
             self.state = 157
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 566692413440) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 207233161216) != 0):
                 self.state = 156
                 self.expr()
 
 
             self.state = 159
-            self.match(ObfuMiniCParser.T__1)
+            self.match(ObfuMiniCParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1258,6 +1308,15 @@ class ObfuMiniCParser ( Parser ):
 
         def RPAREN(self):
             return self.getToken(ObfuMiniCParser.RPAREN, 0)
+
+        def SEMI(self):
+            return self.getToken(ObfuMiniCParser.SEMI, 0)
+
+        def COMMA(self, i:int=None):
+            if i is None:
+                return self.getTokens(ObfuMiniCParser.COMMA)
+            else:
+                return self.getToken(ObfuMiniCParser.COMMA, i)
 
         def expr(self, i:int=None):
             if i is None:
@@ -1304,7 +1363,7 @@ class ObfuMiniCParser ( Parser ):
             self.state = 188
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [37]:
+            if token in [23]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 161
                 self.match(ObfuMiniCParser.PRINTF)
@@ -1315,9 +1374,9 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 168
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==1:
+                while _la==35:
                     self.state = 164
-                    self.match(ObfuMiniCParser.T__0)
+                    self.match(ObfuMiniCParser.COMMA)
                     self.state = 165
                     self.expr()
                     self.state = 170
@@ -1327,9 +1386,9 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 171
                 self.match(ObfuMiniCParser.RPAREN)
                 self.state = 172
-                self.match(ObfuMiniCParser.T__1)
+                self.match(ObfuMiniCParser.SEMI)
                 pass
-            elif token in [38]:
+            elif token in [24]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 173
                 self.match(ObfuMiniCParser.SCANF)
@@ -1340,15 +1399,15 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 183
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==1:
+                while _la==35:
                     self.state = 176
-                    self.match(ObfuMiniCParser.T__0)
+                    self.match(ObfuMiniCParser.COMMA)
                     self.state = 178
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if _la==14:
+                    if _la==2:
                         self.state = 177
-                        self.match(ObfuMiniCParser.T__13)
+                        self.match(ObfuMiniCParser.T__1)
 
 
                     self.state = 180
@@ -1360,7 +1419,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 186
                 self.match(ObfuMiniCParser.RPAREN)
                 self.state = 187
-                self.match(ObfuMiniCParser.T__1)
+                self.match(ObfuMiniCParser.SEMI)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -1469,9 +1528,9 @@ class ObfuMiniCParser ( Parser ):
             self.state = 195
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==3:
+            if _la==1:
                 self.state = 193
-                self.match(ObfuMiniCParser.T__2)
+                self.match(ObfuMiniCParser.T__0)
                 self.state = 194
                 self.assignExpr()
 
@@ -1531,9 +1590,9 @@ class ObfuMiniCParser ( Parser ):
             self.state = 202
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==15:
+            while _la==3:
                 self.state = 198
-                self.match(ObfuMiniCParser.T__14)
+                self.match(ObfuMiniCParser.T__2)
                 self.state = 199
                 self.logicAndExpr()
                 self.state = 204
@@ -1595,9 +1654,9 @@ class ObfuMiniCParser ( Parser ):
             self.state = 210
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==16:
+            while _la==4:
                 self.state = 206
-                self.match(ObfuMiniCParser.T__15)
+                self.match(ObfuMiniCParser.T__3)
                 self.state = 207
                 self.equalityExpr()
                 self.state = 212
@@ -1659,10 +1718,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 218
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==17 or _la==18:
+            while _la==5 or _la==6:
                 self.state = 214
                 _la = self._input.LA(1)
-                if not(_la==17 or _la==18):
+                if not(_la==5 or _la==6):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1728,10 +1787,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 226
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 7864320) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 1920) != 0):
                 self.state = 222
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 7864320) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1920) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1797,10 +1856,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 234
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==23 or _la==24:
+            while _la==11 or _la==12:
                 self.state = 230
                 _la = self._input.LA(1)
-                if not(_la==23 or _la==24):
+                if not(_la==11 or _la==12):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1866,10 +1925,10 @@ class ObfuMiniCParser ( Parser ):
             self.state = 242
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 234881024) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 57344) != 0):
                 self.state = 238
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 234881024) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 57344) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1933,11 +1992,11 @@ class ObfuMiniCParser ( Parser ):
             self.state = 248
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [23, 24, 28]:
+            if token in [11, 12, 16]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 245
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 293601280) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 71680) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1945,7 +2004,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 246
                 self.unaryExpr()
                 pass
-            elif token in [29, 30, 31, 32, 33, 39]:
+            elif token in [17, 18, 19, 30, 36, 37]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 247
                 self.primaryExpr()
@@ -2024,9 +2083,9 @@ class ObfuMiniCParser ( Parser ):
         self.enterRule(localctx, 48, self.RULE_primaryExpr)
         self._la = 0 # Token type
         try:
-            self.state = 271
+            self.state = 265
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,30,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,29,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 250
@@ -2036,7 +2095,7 @@ class ObfuMiniCParser ( Parser ):
                 self.state = 253
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 566692413440) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 207233161216) != 0):
                     self.state = 252
                     self.argList()
 
@@ -2078,28 +2137,10 @@ class ObfuMiniCParser ( Parser ):
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 261
-                self.match(ObfuMiniCParser.ID)
+                self.match(ObfuMiniCParser.LPAREN)
                 self.state = 262
-                self.match(ObfuMiniCParser.LPAREN)
-                self.state = 264
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 566692413440) != 0):
-                    self.state = 263
-                    self.argList()
-
-
-                self.state = 266
-                self.match(ObfuMiniCParser.RPAREN)
-                pass
-
-            elif la_ == 8:
-                self.enterOuterAlt(localctx, 8)
-                self.state = 267
-                self.match(ObfuMiniCParser.LPAREN)
-                self.state = 268
                 self.expr()
-                self.state = 269
+                self.state = 263
                 self.match(ObfuMiniCParser.RPAREN)
                 pass
 
@@ -2126,6 +2167,12 @@ class ObfuMiniCParser ( Parser ):
             else:
                 return self.getTypedRuleContext(ObfuMiniCParser.ExprContext,i)
 
+
+        def COMMA(self, i:int=None):
+            if i is None:
+                return self.getTokens(ObfuMiniCParser.COMMA)
+            else:
+                return self.getToken(ObfuMiniCParser.COMMA, i)
 
         def getRuleIndex(self):
             return ObfuMiniCParser.RULE_argList
@@ -2154,17 +2201,17 @@ class ObfuMiniCParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 273
+            self.state = 267
             self.expr()
-            self.state = 278
+            self.state = 272
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==1:
-                self.state = 274
-                self.match(ObfuMiniCParser.T__0)
-                self.state = 275
+            while _la==35:
+                self.state = 268
+                self.match(ObfuMiniCParser.COMMA)
+                self.state = 269
                 self.expr()
-                self.state = 280
+                self.state = 274
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
