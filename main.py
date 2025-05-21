@@ -6,6 +6,7 @@ from obfuscator.obfuscator import NameObfuscator
 from obfuscator.deadcode import DeadCodeInserter
 from obfuscator.expression_transform import ExpressionTransformer
 from obfuscator.code_generator import CodeGenerator
+from obfuscator.control_flattening import ControlFlowFlattener
 
 
 def main():
@@ -27,16 +28,19 @@ def main():
 
     transformer = ExpressionTransformer()
     transformer.transform(ast)
+
+     # apply control flow flattening
+    flattener = ControlFlowFlattener()
+    flattener.flatten(ast)
     
-    # print(ast)
 
     generator = CodeGenerator()
     code = generator.generate(ast)
 
+    print(ast)
+
     with open("output.mc", "w") as f:
         f.write(code)
-
-
 
 
 if __name__ == '__main__':
