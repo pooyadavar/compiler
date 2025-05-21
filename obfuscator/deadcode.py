@@ -1,6 +1,7 @@
 import random
 from obfuscator.ast import *
 
+
 class DeadCodeInserter:
     def __init__(self):
         self.counter = 0
@@ -13,7 +14,7 @@ class DeadCodeInserter:
         elif isinstance(node, Function):
             new_body = []
             for stmt in node.body:
-                if random.random() < 0.3: 
+                if random.random() < 0.3:
                     new_body.append(self.make_dead_stmt())
                 self.insert(stmt)
                 new_body.append(stmt)
@@ -50,10 +51,8 @@ class DeadCodeInserter:
         elif kind == "if":
             return IfStmt(
                 condition=Literal(0),
-                then_branch=Block([
-                    ExpressionStmt(
-                        FuncCall("printf", [Literal("Unreachable\\n")])
-                    )
-                ]),
-                else_branch=None
+                then_branch=Block(
+                    [ExpressionStmt(FuncCall("printf", [Literal("Unreachable\\n")]))]
+                ),
+                else_branch=None,
             )

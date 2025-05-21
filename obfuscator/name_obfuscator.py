@@ -3,17 +3,21 @@ import string
 from typing import Dict, Set, Union, List
 from obfuscator.ast import *
 
+
 class NameObfuscator:
     """Obfuscates variable and function names in the AST, preserving 'main'."""
+
     def __init__(self):
         self.name_map: Dict[str, str] = {}  # Maps original names to obfuscated names
-        self.used_names: Set[str] = set()   # Tracks used obfuscated names
+        self.used_names: Set[str] = set()  # Tracks used obfuscated names
         self.scope_stack: List[Set[str]] = [set()]  # Tracks names in current scope
 
     def generate_name(self) -> str:
         """Generates a unique random name (e.g., xyz12)."""
         while True:
-            name = ''.join(random.choices(string.ascii_lowercase, k=3)) + str(random.randint(1, 999))
+            name = "".join(random.choices(string.ascii_lowercase, k=3)) + str(
+                random.randint(1, 999)
+            )
             if name not in self.used_names and name not in self.name_map.values():
                 self.used_names.add(name)
                 self.scope_stack[-1].add(name)
@@ -37,15 +41,15 @@ class NameObfuscator:
     def _obfuscate_function(self, func: Function) -> None:
         """Obfuscates function name (except 'main') and its contents."""
         if func.name != "main":
-            self._rename(func, 'name')
+            self._rename(func, "name")
         for param in func.params:
             self._obfuscate_parameter(param)
         self._obfuscate_block(func.body)
 
     def _obfuscate_parameter(self, param: Parameter) -> None:
         """Obfuscates parameter name."""
-        self._rename(param, 'name')
-        if hasattr(param, 'init_expr') and param.init_expr:
+        self._rename(param, "name")
+        if hasattr(param, "init_expr") and param.init_expr:
             self._obfuscate_expression(param.init_expr)
 
     def _obfuscate_block(self, block: Union[List[ASTNode], Block]) -> None:
@@ -60,8 +64,8 @@ class NameObfuscator:
     def _obfuscate_stmt(self, stmt: ASTNode) -> None:
         """Obfuscates a statement based on its type."""
         if isinstance(stmt, VariableDecl):
-            self._rename(stmt, 'name')
-            if hasattr(stmt, 'init_expr') and stmt.init_expr:
+            self._rename(stmt, "name")
+            if hasattr(stmt, "init_expr") and stmt.init_expr:
                 self._obfuscate_expression(stmt.init_expr)
         elif isinstance(stmt, Assignment):
             if isinstance(stmt.target, Variable) and stmt.target.name in self.name_map:
@@ -128,7 +132,7 @@ class NameObfuscator:
                 self._obfuscate_expression(arg)
         elif isinstance(expr, Literal):
             pass
-        elif hasattr(expr, '__dict__'):
+        elif hasattr(expr, "__dict__"):
             for val in expr.__dict__.values():
                 if isinstance(val, ASTNode):
                     self._obfuscate_expression(val)

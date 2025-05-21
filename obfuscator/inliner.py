@@ -2,6 +2,7 @@ from obfuscator.ast import *
 import copy
 import itertools
 
+
 class FunctionInliner:
     def __init__(self, ast: Program):
         self.ast = ast
@@ -20,7 +21,9 @@ class FunctionInliner:
                 if inlined:
                     result.extend(inlined)
                     continue
-            elif isinstance(stmt, VariableDecl) and isinstance(stmt.init_expr, FuncCall):
+            elif isinstance(stmt, VariableDecl) and isinstance(
+                stmt.init_expr, FuncCall
+            ):
                 inlined = self._try_inline_call(stmt.init_expr, assign_to=stmt.name)
                 if inlined:
                     result.extend(inlined)
@@ -43,16 +46,21 @@ class FunctionInliner:
             return Block(self._inline_block(s.items))
         return Block(self._inline_block([s]))
 
-    def _try_inline_call(self, call: FuncCall, assign_to=None) -> Optional[List[Statement]]:
+    def _try_inline_call(
+        self, call: FuncCall, assign_to=None
+    ) -> Optional[List[Statement]]:
         target_func = self.function_map.get(call.name)
-                
+
         if not target_func:
             return None
 
-        if any(isinstance(stmt, Label) and stmt.name.endswith("dispatcher") for stmt in target_func.body):
-            '''
+        if any(
+            isinstance(stmt, Label) and stmt.name.endswith("dispatcher")
+            for stmt in target_func.body
+        ):
+            """
             not apply changes if it is unsafe state 
-            '''
+            """
             return None
 
         if call.name == assign_to:
@@ -67,7 +75,7 @@ class FunctionInliner:
         for param, arg in zip(target_func.params, arg_values):
             fresh_name = self._fresh_name(param.name)
             param_names.append(fresh_name)
-            param_mapping[param.name] = fresh_name  
+            param_mapping[param.name] = fresh_name
             inlined_stmts.append(VariableDecl(param.param_type, fresh_name, arg))
 
         body_copy = copy.deepcopy(target_func.body)
@@ -94,12 +102,15 @@ class FunctionInliner:
     def _fresh_name(self, base):
         return f"{base}_{next(self.counter)}"
 
+
 class _LocalVarRenamer:
     def __init__(self, counter, initial_map=None):
         self.counter = counter
-        self.name_map = initial_map or {} 
+        self.name_map = initial_map or {}
 
-    def rename_block(self, stmts: List[Statement], exclude: List[str] = []) -> List[Statement]:
+    def rename_block(
+        self, stmts: List[Statement], exclude: List[str] = []
+    ) -> List[Statement]:
         renamed = []
         for stmt in stmts:
             renamed.append(self._rename_stmt(stmt, exclude))
@@ -146,7 +157,9 @@ class _LocalVarRenamer:
         if isinstance(expr, Variable):
             return Variable(self._map(expr.name))
         elif isinstance(expr, BinaryOp):
-            return BinaryOp(expr.op, self._rename_expr(expr.left), self._rename_expr(expr.right))
+            return BinaryOp(
+                expr.op, self._rename_expr(expr.left), self._rename_expr(expr.right)
+            )
         elif isinstance(expr, UnaryOp):
             return UnaryOp(expr.op, self._rename_expr(expr.operand))
         elif isinstance(expr, FuncCall):
