@@ -21,7 +21,31 @@ stmt
     | ifStmt
     | loopStmt
     | returnStmt
-    | ioStmt ;
+    | ioStmt
+    | switchStmt   ;
+
+switchStmt
+    : 'switch' '(' expr ')' '{' switchBlock* '}'
+    ;
+
+switchBlock
+    : caseBlock
+    | defaultBlock
+    ;
+
+caseBlock
+    : 'case' literal ':' stmt*
+    ;
+
+defaultBlock
+    : 'default' ':' stmt*
+    ;
+
+literal
+    : NUMBER
+    | CHAR
+    | BOOL
+    ;
 
 exprStmt    : expr? ';' ;
 
