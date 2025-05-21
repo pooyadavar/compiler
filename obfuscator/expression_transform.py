@@ -1,6 +1,7 @@
 from obfuscator.ast import *
 import random
 
+
 class ExpressionTransformer:
     def transform(self, node):
         if isinstance(node, Program):
@@ -79,23 +80,23 @@ class ExpressionTransformer:
         return expr
 
     def rewrite_binary(self, node):
-        if node.op == '+':
-            return BinaryOp('-', node.left, UnaryOp('-', node.right))
+        if node.op == "+":
+            return BinaryOp("-", node.left, UnaryOp("-", node.right))
 
-        elif node.op == '-':
-            return BinaryOp('+', node.left, UnaryOp('-', node.right))
+        elif node.op == "-":
+            return BinaryOp("+", node.left, UnaryOp("-", node.right))
 
-        elif node.op == '*':
+        elif node.op == "*":
             if isinstance(node.right, Literal) and node.right.value == 2:
-                return BinaryOp('+', node.left, node.left)
+                return BinaryOp("+", node.left, node.left)
 
-        elif node.op == '==':
-            inner = BinaryOp('!=', node.left, node.right)
-            return UnaryOp('!', inner)
+        elif node.op == "==":
+            inner = BinaryOp("!=", node.left, node.right)
+            return UnaryOp("!", inner)
 
         return node
 
     def rewrite_unary(self, node):
-        if node.op == '-' and isinstance(node.operand, Variable):
-            return BinaryOp('-', Literal(0), node.operand)
+        if node.op == "-" and isinstance(node.operand, Variable):
+            return BinaryOp("-", Literal(0), node.operand)
         return node

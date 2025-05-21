@@ -7,5 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "antlr4-python3-runtime==4.13.2",
     "antlr4-tools==0.2.2",
-    "install-jdk==1.1.0"
+    "install-jdk==1.1.0",
+    "argparse==1.4.0"
 ]

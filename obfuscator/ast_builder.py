@@ -1,14 +1,28 @@
 from obfuscator.parser.ObfuMiniCVisitor import ObfuMiniCVisitor
 from obfuscator.parser.ObfuMiniCParser import *
 from obfuscator.ast import (
-    Program, Function, Parameter, VariableDecl, ExpressionStmt, Return,
-    IfStmt, WhileStmt, ForStmt, Block, Print, Scan, Assignment, BinaryOp,
-    UnaryOp, FuncCall, Variable, Literal
+    Program,
+    Function,
+    Parameter,
+    VariableDecl,
+    ExpressionStmt,
+    Return,
+    IfStmt,
+    WhileStmt,
+    ForStmt,
+    Block,
+    Print,
+    Scan,
+    Assignment,
+    BinaryOp,
+    UnaryOp,
+    FuncCall,
+    Variable,
+    Literal,
 )
 
 
 class ASTBuilder(ObfuMiniCVisitor):
-
     def visitSwitchStmt(self, ctx):
         expr = self.visit(ctx.expr())
         cases = []
@@ -38,7 +52,7 @@ class ASTBuilder(ObfuMiniCVisitor):
 
     def visitCaseBlock(self, ctx):
         value = self.visit(ctx.literal())
-        label_name = f"case_{value}"  
+        label_name = f"case_{value}"
         label = Label(label_name)
         stmt = self.visit(ctx.stmt())
         return SwitchCase(value, label)
@@ -60,7 +74,9 @@ class ASTBuilder(ObfuMiniCVisitor):
         name = ctx.ID().getText()
         params = self.visit(ctx.paramList()) if ctx.paramList() else []
         block = self.visit(ctx.blockStmt())
-        return Function(return_type, name, params, block.items if isinstance(block, Block) else [])
+        return Function(
+            return_type, name, params, block.items if isinstance(block, Block) else []
+        )
 
     def visitParamList(self, ctx):
         return [self.visit(p) for p in ctx.param()]
@@ -70,7 +86,7 @@ class ASTBuilder(ObfuMiniCVisitor):
 
     def visitBlockStmt(self, ctx):
         stmts = []
-        for child in ctx.children[1:-1]:  
+        for child in ctx.children[1:-1]:
             result = self.visit(child)
             if result is None:
                 continue
@@ -122,9 +138,8 @@ class ASTBuilder(ObfuMiniCVisitor):
             return Print(fmt, args)
         elif ctx.SCANF():
             fmt = ctx.STRING().getText().strip('"')
-            args = [tok.getText().replace('&', '') for tok in ctx.ID()]
+            args = [tok.getText().replace("&", "") for tok in ctx.ID()]
             return Scan(fmt, args)
-
 
     # === Expressions ===
 
@@ -197,9 +212,11 @@ class ASTBuilder(ObfuMiniCVisitor):
             name = ctx.ID().getText()
             args = self.visit(ctx.argList()) if ctx.argList() else []
             return FuncCall(name, args)
-        
+
         if ctx.ID() and ctx.expr():
-            return FuncCall(ctx.ID().getText(), self.visit(ctx.argList()) if ctx.argList() else [])
+            return FuncCall(
+                ctx.ID().getText(), self.visit(ctx.argList()) if ctx.argList() else []
+            )
         elif ctx.ID():
             return Variable(ctx.ID().getText())
         elif ctx.NUMBER():

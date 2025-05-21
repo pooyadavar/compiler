@@ -1,17 +1,18 @@
 from obfuscator.ast import *
 
+
 class CodeGenerator:
     def __init__(self):
         self.indent_level = 0
         self.output = []
 
     def emit(self, code):
-        self.output.append('    ' * self.indent_level + code)
+        self.output.append("    " * self.indent_level + code)
 
     def generate(self, program):
         for func in program.functions:
             self.visit(func)
-        return '\n'.join(self.output)
+        return "\n".join(self.output)
 
     def visit(self, node):
         if isinstance(node, Program):
@@ -19,7 +20,7 @@ class CodeGenerator:
                 self.visit(func)
 
         elif isinstance(node, Function):
-            params = ', '.join([f"{p.param_type} {p.name}" for p in node.params])
+            params = ", ".join([f"{p.param_type} {p.name}" for p in node.params])
             self.emit(f"{node.return_type} {node.name}({params}) {{")
             self.indent_level += 1
             for stmt in node.body:
@@ -36,7 +37,11 @@ class CodeGenerator:
 
         elif isinstance(node, Assignment):
             expr = self.visit_expr(node.value)
-            target = node.target.name if isinstance(node.target, Variable) else str(node.target)
+            target = (
+                node.target.name
+                if isinstance(node.target, Variable)
+                else str(node.target)
+            )
             self.emit(f"{target} = {expr};")
 
         elif isinstance(node, Return):
@@ -57,9 +62,9 @@ class CodeGenerator:
             self.visit(node.body)
 
         elif isinstance(node, ForStmt):
-            init = self.visit_expr(node.init) if node.init else ''
-            cond = self.visit_expr(node.cond) if node.cond else ''
-            update = self.visit_expr(node.update) if node.update else ''
+            init = self.visit_expr(node.init) if node.init else ""
+            cond = self.visit_expr(node.cond) if node.cond else ""
+            update = self.visit_expr(node.update) if node.update else ""
             self.emit(f"for ({init}; {cond}; {update})")
             self.visit(node.body)
 
@@ -77,7 +82,7 @@ class CodeGenerator:
 
         elif isinstance(node, Print):
             if node.args:
-                args = ', '.join([self.visit_expr(arg) for arg in node.args])
+                args = ", ".join([self.visit_expr(arg) for arg in node.args])
                 self.emit(f'printf("{node.format_str}", {args});')
             else:
                 self.emit(f'printf("{node.format_str}");')
@@ -106,7 +111,11 @@ class CodeGenerator:
     def visit_expr(self, expr):
         if isinstance(expr, Literal):
             if isinstance(expr.value, str):
-                escaped = expr.value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+                escaped = (
+                    expr.value.replace("\\", "\\\\")
+                    .replace('"', '\\"')
+                    .replace("\n", "\\n")
+                )
                 return f'"{escaped}"'
             else:
                 return str(expr.value)
@@ -124,11 +133,15 @@ class CodeGenerator:
             return f"({expr.op}{operand})"
 
         elif isinstance(expr, FuncCall):
-            args = ', '.join([self.visit_expr(arg) for arg in expr.args])
+            args = ", ".join([self.visit_expr(arg) for arg in expr.args])
             return f"{expr.name}({args})"
 
         elif isinstance(expr, Assignment):
-            target = expr.target.name if isinstance(expr.target, Variable) else str(expr.target)
+            target = (
+                expr.target.name
+                if isinstance(expr.target, Variable)
+                else str(expr.target)
+            )
             value = self.visit_expr(expr.value)
             return f"{target} = {value}"
         else:

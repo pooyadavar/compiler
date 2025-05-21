@@ -2,9 +2,10 @@ from obfuscator.ast import *
 from itertools import count
 from typing import List
 
+
 class ControlFlowFlattener:
     id_counter = count()
-    
+
     def flatten(self, program: Program):
         for i, func in enumerate(program.functions):
             program.functions[i] = self._flatten_function(func)
@@ -38,9 +39,13 @@ class ControlFlowFlattener:
             label = Label(case_label_name)
             case_body = []
 
-  
             if isinstance(stmt, VariableDecl):
-                init = getattr(stmt, 'init_expr', None) or getattr(stmt, 'init', None) or getattr(stmt, 'value', None) or getattr(stmt, 'initializer', None)
+                init = (
+                    getattr(stmt, "init_expr", None)
+                    or getattr(stmt, "init", None)
+                    or getattr(stmt, "value", None)
+                    or getattr(stmt, "initializer", None)
+                )
                 if init is not None:
                     case_body.append(Assignment(Variable(stmt.name), init))
             elif isinstance(stmt, Assignment):
@@ -48,7 +53,6 @@ class ControlFlowFlattener:
             elif isinstance(stmt, ExpressionStmt) and isinstance(stmt.expr, FuncCall):
                 case_body.append(stmt)
             elif isinstance(stmt, ForStmt):
-        
                 init = stmt.init
                 loop_var = None
                 if isinstance(init, VariableDecl):
@@ -59,7 +63,9 @@ class ControlFlowFlattener:
                     if isinstance(init.target, Variable):
                         loop_var = init.target.name
                     case_body.append(init)
-                elif isinstance(init, ExpressionStmt) and isinstance(init.expr, Assignment):
+                elif isinstance(init, ExpressionStmt) and isinstance(
+                    init.expr, Assignment
+                ):
                     if isinstance(init.expr.target, Variable):
                         loop_var = init.expr.target.name
                     case_body.append(init.expr)
@@ -69,25 +75,27 @@ class ControlFlowFlattener:
                 if loop_var:
                     if isinstance(cond, BinaryOp) and isinstance(cond.left, Variable):
                         cond.left = Variable(loop_var)
-                    if isinstance(update, Assignment) and isinstance(update.target, Variable):
+                    if isinstance(update, Assignment) and isinstance(
+                        update.target, Variable
+                    ):
                         update.target = Variable(loop_var)
-                        if isinstance(update.value, BinaryOp) and isinstance(update.value.left, Variable):
+                        if isinstance(update.value, BinaryOp) and isinstance(
+                            update.value.left, Variable
+                        ):
                             update.value.left = Variable(loop_var)
-                    elif isinstance(update, ExpressionStmt) and isinstance(update.expr, Assignment):
+                    elif isinstance(update, ExpressionStmt) and isinstance(
+                        update.expr, Assignment
+                    ):
                         update.expr.target = Variable(loop_var)
-                        if isinstance(update.expr.value, BinaryOp) and isinstance(update.expr.value.left, Variable):
+                        if isinstance(update.expr.value, BinaryOp) and isinstance(
+                            update.expr.value.left, Variable
+                        ):
                             update.expr.value.left = Variable(loop_var)
-                case_body.append(ForStmt(
-                    init=None,  
-                    cond=cond,
-                    update=update,
-                    body=stmt.body
-                ))
+                case_body.append(
+                    ForStmt(init=None, cond=cond, update=update, body=stmt.body)
+                )
             elif isinstance(stmt, WhileStmt):
-                case_body.append(WhileStmt(
-                    condition=stmt.condition,
-                    body=stmt.body
-                ))
+                case_body.append(WhileStmt(condition=stmt.condition, body=stmt.body))
             else:
                 case_body.append(stmt)
 
@@ -175,7 +183,7 @@ class ControlFlowFlattener:
                 for arg in node.args:
                     if isinstance(arg, Variable):
                         walk(arg)
-            elif hasattr(node, '__dict__'):
+            elif hasattr(node, "__dict__"):
                 for val in node.__dict__.values():
                     if isinstance(val, ASTNode):
                         walk(val)

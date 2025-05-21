@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import os
-from cli import run_pipeline  
+from cli import run_pipeline
+
 
 class ObfuscatorGUI:
     def __init__(self, root):
@@ -26,12 +27,14 @@ class ObfuscatorGUI:
             "flatten": tk.BooleanVar(),
             "inline": tk.BooleanVar(),
             "all": tk.BooleanVar(),
-            "check": tk.BooleanVar()
+            "check": tk.BooleanVar(),
         }
 
         tk.Label(root, text="Transformations:").pack(pady=10)
         for key in self.options:
-            tk.Checkbutton(root, text=key.capitalize(), variable=self.options[key]).pack(anchor='w', padx=20)
+            tk.Checkbutton(
+                root, text=key.capitalize(), variable=self.options[key]
+            ).pack(anchor="w", padx=20)
 
         tk.Button(root, text="Run Obfuscation", command=self.run).pack(pady=20)
 
