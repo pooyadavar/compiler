@@ -12,8 +12,8 @@ int main() {
     while(x==5){
         printf("sample");
     }
-    int i=0;
-    for(; i<5 ; i++){
-        printf("sample2");
+    int i = 0;
+    for (i = 0; i < 5; i = i + 1) {
+        printf("i is %d\n", i);
     }
 }

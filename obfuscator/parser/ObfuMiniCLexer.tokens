@@ -37,7 +37,8 @@ NUMBER=36
 ID=37
 WS=38
 LINE_COMMENT=39
-BLOCK_COMMENT=40
+INCR=40
+DECR=41
 '='=1
 '&'=2
 '||'=3
@@ -70,3 +71,5 @@ BLOCK_COMMENT=40
 '}'=33
 ';'=34
 ','=35
+'++'=40
+'--'=41

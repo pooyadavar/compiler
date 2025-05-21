@@ -28,11 +28,10 @@ def main():
     transformer = ExpressionTransformer()
     transformer.transform(ast)
 
-    # تولید کد Mini-C از AST
     generator = CodeGenerator()
     code = generator.generate(ast)
 
-    with open("mc.output", "w") as f:
+    with open("output.mc", "w") as f:
         f.write(code)
 
 
