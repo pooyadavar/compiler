@@ -18,20 +18,20 @@ def main():
     tree = parser.compilationUnit()
     ast = ASTBuilder().visit(tree)
 
-    # #change name of variables
-    # obfuscator = NameObfuscator()
-    # obfuscator.obfuscate(ast)
+    #change name of variables
+    obfuscator = NameObfuscator()
+    obfuscator.obfuscate(ast)
 
-    # #add dead code 
-    # dead_inserter = DeadCodeInserter()
-    # dead_inserter.insert(ast)
+    #add dead code 
+    dead_inserter = DeadCodeInserter()
+    dead_inserter.insert(ast)
 
-    # transformer = ExpressionTransformer()
-    # transformer.transform(ast)
+    transformer = ExpressionTransformer()
+    transformer.transform(ast)
 
-    # # apply control flow flattening
-    # flattener = ControlFlowFlattener()
-    # flattener.flatten(ast)
+    # apply control flow flattening
+    flattener = ControlFlowFlattener()
+    flattener.flatten(ast)
     
     inliner = FunctionInliner(ast)
     inliner.inline()
