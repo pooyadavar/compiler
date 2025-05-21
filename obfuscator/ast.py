@@ -2,6 +2,9 @@ from typing import List, Optional
 
 """ Base AST Node """
 
+class Node:
+    pass
+
 class ASTNode:
     def __repr__(self):
         return self._repr()
@@ -130,3 +133,23 @@ class FuncCall(Expression):
     def __init__(self, name: str, args: List[Expression]):
         self.name = name
         self.args = args
+
+class Label:
+    def __init__(self, name):
+        self.name = name
+
+class Goto(Node):
+    def __init__(self, label):
+        self.label = label
+
+class SwitchCase:
+    def __init__(self, value, label, body):
+        self.value = value        # مقدار case
+        self.label = label        # شیء Label با attribute name
+        self.body = body          # Block یا لیست استیتمنت‌ها
+
+class Switch:
+    def __init__(self, expr, cases, default=None):
+        self.expr = expr
+        self.cases = cases  # لیست SwitchCase ها
+        self.default = default  # بدنه default به صورت Block یا لیست دستورات
