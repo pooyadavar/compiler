@@ -9,6 +9,45 @@ from obfuscator.ast import (
 
 class ASTBuilder(ObfuMiniCVisitor):
 
+    def visitSwitchStmt(self, ctx):
+        expr = self.visit(ctx.expr())
+        cases = []
+        default = None
+        label_counter = 0
+
+        for block in ctx.switchBlock():
+            if block.caseBlock():
+                case_ctx = block.caseBlock()
+                value = self.visit(case_ctx.literal())
+                label_name = f"case_{label_counter}"
+                label_counter += 1
+                label = Label(label_name)
+                stmts = []
+                for stmt_ctx in case_ctx.stmt():
+                    stmts.append(self.visit(stmt_ctx))
+                body = Block(stmts)
+                cases.append(SwitchCase(value, label, body))
+            elif block.defaultBlock():
+                default_ctx = block.defaultBlock()
+                stmts = []
+                for stmt_ctx in default_ctx.stmt():
+                    stmts.append(self.visit(stmt_ctx))
+                default = Block(stmts)
+
+        return Switch(expr, cases, default)
+
+    def visitCaseBlock(self, ctx):
+        value = self.visit(ctx.literal())
+        label_name = f"case_{value}"  # یا هر نام دلخواه
+        label = Label(label_name)
+        stmt = self.visit(ctx.stmt())
+        # اینجا اگر بخواهی می‌توانی label و stmt را به نحوی با هم ترکیب کنی
+        return SwitchCase(value, label)
+
+    def visitLabelStmt(self, ctx):
+        name = ctx.ID().getText()
+        return Label(name)
+
     def visitCompilationUnit(self, ctx):
         functions = []
         for child in ctx.children:
