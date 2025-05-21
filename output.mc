@@ -1,35 +1,34 @@
-int wdl9(int jtl45, int xty71) {
+int fze73(int frm94, int rch27) {
+int ism4 = ((frm94 - (-rch27)) + (-frm94));
 if (false)
 {
 printf("Unreachable
 ");
 }
-int inh32 = (jtl45 + xty71);
-return inh32;
+return ism4;
 }
-int krf8() {
-int hyr4 = 5;
-int nfm47 = 10;
-int gpy41 = wdl9(hyr4, nfm47);
+int ujq35() {
+int wdb91 = 5;
 if (false)
 {
 printf("Unreachable
 ");
 }
-printf("%d\n", gpy41);
+int zrj14 = 10;
+int unused_0 = 988;
+int fyc99 = fze73(wdb91, zrj14);
+int unused_1 = 948;
+printf("%d\n", fyc99);
 return 0;
-while ((hyr4 == 5))
+while ((!(wdb91 != 5)))
 {
 printf("sample", );
 }
-if (false)
+int unused_2 = 386;
+int cei31 = 0;
+for (None; (cei31 < 5); None)
 {
-printf("Unreachable
-");
-}
-int kql80 = 0;
-for (None; (kql80 < 5); None)
-{
-printf("i is %d\n", kql80);
+int unused_3 = 464;
+printf("i is %d\n", cei31);
 }
 }

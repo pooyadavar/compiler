@@ -27,6 +27,8 @@ def main():
 
     transformer = ExpressionTransformer()
     transformer.transform(ast)
+    
+    # print(ast)
 
     generator = CodeGenerator()
     code = generator.generate(ast)
@@ -35,7 +37,7 @@ def main():
         f.write(code)
 
 
-    # print(ast)
+
 
 if __name__ == '__main__':
     main()

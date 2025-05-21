@@ -4,55 +4,58 @@ from obfuscator.ast import *
 class ExpressionTransformer:
     def transform(self, node):
         if isinstance(node, Program):
-            for func in node.functions:
-                self.transform(func)
+            for i in range(len(node.functions)):
+                node.functions[i] = self.transform(node.functions[i])
 
         elif isinstance(node, Function):
-            for stmt in node.body:
-                self.transform(stmt)
+            for i in range(len(node.body)):
+                node.body[i] = self.transform(node.body[i])
+        
+        elif isinstance(node, VariableDecl):
+            if node.init_expr:
+                node.init_expr = self.transform(node.init_expr)
 
         elif isinstance(node, Block):
-            for stmt in node.items:
-                self.transform(stmt)
+            for i in range(len(node.items)):
+                node.items[i] = self.transform(node.items[i])
 
         elif isinstance(node, IfStmt):
-            self.transform(node.condition)
-            self.transform(node.then_branch)
+            node.condition = self.transform(node.condition)
+            node.then_branch = self.transform(node.then_branch)
             if node.else_branch:
-                self.transform(node.else_branch)
+                node.else_branch = self.transform(node.else_branch)
 
         elif isinstance(node, WhileStmt):
-            self.transform(node.condition)
-            self.transform(node.body)
+            node.condition = self.transform(node.condition)
+            node.body = self.transform(node.body)
 
         elif isinstance(node, ForStmt):
             if node.init:
-                self.transform(node.init)
+                node.init = self.transform(node.init)
             if node.cond:
-                self.transform(node.cond)
+                node.cond = self.transform(node.cond)
             if node.update:
-                self.transform(node.update)
-            self.transform(node.body)
+                node.update = self.transform(node.update)
+            node.body = self.transform(node.body)
 
         elif isinstance(node, Return):
             if node.value:
-                self.transform(node.value)
+                node.value = self.transform(node.value)
 
         elif isinstance(node, ExpressionStmt):
             if node.expr:
-                self.transform(node.expr)
+                node.expr = self.transform(node.expr)
 
         elif isinstance(node, Assignment):
-            self.transform(node.value)
+            node.value = self.transform(node.value)
 
         elif isinstance(node, Print):
             for i in range(len(node.args)):
-                self.transform(node.args[i])
+                node.args[i] = self.transform(node.args[i])
 
         elif isinstance(node, UnaryOp):
             node.operand = self.transform(node.operand)
-            node = self.rewrite_unary(node)
-            return node
+            return self.rewrite_unary(node)
 
         elif isinstance(node, BinaryOp):
             node.left = self.transform(node.left)
@@ -69,6 +72,7 @@ class ExpressionTransformer:
         return node
 
     def rewrite_binary(self, node):
+        #print("flag1")
         if node.op == '+':
             # a + b → a - (-b)
             # if random.random() < 1.0:
