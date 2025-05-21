@@ -36,7 +36,7 @@ class NameObfuscator:
 
     def _obfuscate_function(self, func: Function) -> None:
         """Obfuscates function name (except 'main') and its contents."""
-        if func.name != "main":  # Preserve 'main' to avoid linker errors
+        if func.name != "main":
             self._rename(func, 'name')
         for param in func.params:
             self._obfuscate_parameter(param)
