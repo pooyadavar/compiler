@@ -28,7 +28,8 @@ class ControlFlowFlattener:
         state_decl = VariableDecl("int", state_var, Literal(0))
         new_body = [state_decl]
 
-        for var in sorted(all_vars.union(returned_vars)):
+        param_names = {param.name for param in func.params}
+        for var in sorted((all_vars | returned_vars) - param_names):
             new_body.append(VariableDecl("int", var, None))
 
         dispatcher_cases = []

@@ -73,10 +73,14 @@ class FunctionInliner:
         param_mapping = {}
 
         for param, arg in zip(target_func.params, arg_values):
-            fresh_name = self._fresh_name(param.name)
-            param_names.append(fresh_name)
-            param_mapping[param.name] = fresh_name
-            inlined_stmts.append(VariableDecl(param.param_type, fresh_name, arg))
+            # Avoid name collision by checking assign_to and prior params
+            if assign_to == param.name:
+                fresh_name = self._fresh_name(param.name + "_arg")
+            else:
+                fresh_name = self._fresh_name(param.name)
+                param_names.append(fresh_name)
+                param_mapping[param.name] = fresh_name
+                inlined_stmts.append(VariableDecl(param.param_type, fresh_name, arg))
 
         body_copy = copy.deepcopy(target_func.body)
         renamer = _LocalVarRenamer(self.counter, param_mapping)
@@ -94,7 +98,8 @@ class FunctionInliner:
         if assign_to is None:
             inlined_stmts.append(ExpressionStmt(Variable(temp_result)))
         else:
-            pass
+            if temp_result != assign_to:
+                inlined_stmts.append(VariableDecl("int", temp_result, None))
 
         inlined_stmts.extend(final_stmts)
         return inlined_stmts
