@@ -11,7 +11,7 @@ from obfuscator.inliner import FunctionInliner
 
 
 def main():
-    input_stream = FileStream("input/input2.mc")
+    input_stream = FileStream("input/input.mc")
     lexer = ObfuMiniCLexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = ObfuMiniCParser(stream)

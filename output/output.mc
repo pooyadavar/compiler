@@ -1,19 +1,16 @@
-int khi170(int ttb706, int aik464) {
-    int ahx179 = (ttb706 + aik464);
-    return ahx179;
+int sum(int a, int b) {
+    int result = (a + b);
+    return result;
 }
 int main() {
+    int x = 3;
+    int y = 4;
     if (0)
     {
         printf("Unreachable\\n");
     }
-    int yqz737 = 3;
-    int ezu89 = 4;
-    int caz366 = khi170(yqz737, ezu89);
-    printf("%d\n", caz366);
-    if (0)
-    {
-        printf("Unreachable\\n");
-    }
+    int total = sum(x, y);
+    printf("%d\n", total);
+    int unused_0 = 898;
     return 0;
 }
